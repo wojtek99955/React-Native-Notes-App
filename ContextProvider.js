@@ -1,7 +1,7 @@
 import React from "react";
 import { createContext, useState } from "react";
 
-export const context = createContext([]);
+export const Context = createContext([]);
 
 function ContextProvider({ children }) {
   const [notes, setNotes] = useState();
