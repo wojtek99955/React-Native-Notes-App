@@ -6,6 +6,7 @@ const Container = styled.View`
   width: 80%;
   padding: 10px;
   border-radius: 10px;
+  box-shadow: 2px 1px 6px rgba(206, 206, 206, 0.25);
 `;
 
 const NoteText = styled.Text`
