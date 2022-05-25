@@ -1,6 +1,15 @@
 import styled from "styled-components";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import { useState } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  FlatList,
+  ScrollView,
+} from "react-native";
+import { useState, useContext } from "react";
+import uuid from "react-native-uuid";
+import { Context } from "../ContextProvider";
 
 const Container = styled.View``;
 const Input = styled.TextInput`
@@ -32,8 +41,37 @@ const ButtonText = styled.Text`
   font-weight: 600;
 `;
 
+const Item = styled.Text`
+  font-size: 30px;
+  color: "gren";
+`;
+
+const data = [
+  {
+    text: "efff",
+    id: 11,
+  },
+  {
+    text: "to jaa",
+    id: 22,
+  },
+];
+
 function AddNote() {
+  const ctx = useContext(Context);
   const [noteText, setNoteText] = useState("");
+  const handleSaveNote = () => {
+    ctx.setNotes([{ text: noteText }, ...ctx.notes]);
+    console.log(ctx.notes);
+  };
+
+  const renderItem = ({ item }) => {
+    return (
+      <>
+        <Text>{item.text}</Text>
+      </>
+    );
+  };
 
   return (
     <Container>
@@ -43,11 +81,13 @@ function AddNote() {
         multiline={true}
         numberOfLines={8}
         textAlignVertical="top"
-        onChangeText={setNoteText}
+        onChangeText={(text) => setNoteText(text)}
       />
-      <Button>
+      <Button onPress={handleSaveNote}>
         <ButtonText>Add Note</ButtonText>
       </Button>
+      <Text>{ctx.notes.length}</Text>
+      <FlatList data={ctx.notes} renderItem={renderItem} />
     </Container>
   );
 }
