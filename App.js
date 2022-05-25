@@ -26,8 +26,12 @@ export default function App() {
             name="Add Note"
             component={AddNote}
             options={{
-              tabBarIcon: () => (
-                <Ionicons name="add-circle-outline" size={25} />
+              tabBarIcon: ({ focused }) => (
+                <Ionicons
+                  name={focused ? "add-circle" : "add-circle-outline"}
+                  color={focused ? "#fdbe00" : null}
+                  size={28}
+                />
               ),
             }}
           />
@@ -35,8 +39,12 @@ export default function App() {
             name="Notes List"
             component={NotesList}
             options={{
-              tabBarIcon: () => (
-                <Ionicons name="reorder-four-outline" size={25} />
+              tabBarIcon: ({ focused }) => (
+                <Ionicons
+                  name={focused ? "reorder-four" : "reorder-four-outline"}
+                  color={focused ? "#fdbe00" : null}
+                  size={28}
+                />
               ),
             }}
           />
@@ -44,7 +52,13 @@ export default function App() {
             name="Settings"
             component={Settings}
             options={{
-              tabBarIcon: () => <Ionicons name="settings-outline" size={25} />,
+              tabBarIcon: ({ focused }) => (
+                <Ionicons
+                  name={focused ? "settings" : "settings-outline"}
+                  color={focused ? "#fdbe00" : null}
+                  size={28}
+                />
+              ),
             }}
           />
         </Tabs.Navigator>
