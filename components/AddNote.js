@@ -61,16 +61,8 @@ function AddNote() {
   const ctx = useContext(Context);
   const [noteText, setNoteText] = useState("");
   const handleSaveNote = () => {
-    ctx.setNotes([{ text: noteText }, ...ctx.notes]);
+    ctx.setNotes([{ text: noteText, id: uuid.v4() }, ...ctx.notes]);
     console.log(ctx.notes);
-  };
-
-  const renderItem = ({ item }) => {
-    return (
-      <>
-        <Text>{item.text}</Text>
-      </>
-    );
   };
 
   return (
@@ -86,8 +78,6 @@ function AddNote() {
       <Button onPress={handleSaveNote}>
         <ButtonText>Add Note</ButtonText>
       </Button>
-      <Text>{ctx.notes.length}</Text>
-      <FlatList data={ctx.notes} renderItem={renderItem} />
     </Container>
   );
 }
