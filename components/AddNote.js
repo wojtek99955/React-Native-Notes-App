@@ -63,9 +63,14 @@ function AddNote() {
   const [noteText, setNoteText] = useState("");
   const inputRef = useRef(null);
   const handleSaveNote = () => {
-    ctx.setNotes([{ text: noteText, id: uuid.v4() }, ...ctx.notes]);
-    console.log(ctx.notes);
+    if (noteText.length > 0) {
+      ctx.setNotes([{ text: noteText, id: uuid.v4() }, ...ctx.notes]);
+      console.log(ctx.notes);
+    } else {
+      return ctx.notes;
+    }
     inputRef.current.clear();
+    setNoteText("");
   };
 
   return (
