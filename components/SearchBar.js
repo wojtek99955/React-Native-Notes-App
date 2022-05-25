@@ -1,19 +1,27 @@
 import { View, TextInput } from "react-native";
 import styled from "styled-components";
-
-const Container = styled.View``;
+import Ionicons from "@expo/vector-icons/Ionicons";
+const Wrapper = styled.View``;
+const Container = styled.View`
+  justify-items: center;
+  align-items: center;
+  width: 80%;
+  background-color: #cecece;
+  margin: 20px auto;
+  padding: 10px;
+  flex-direction: row;
+  border-radius: 5px;
+`;
 const Input = styled.TextInput`
   background-color: #cecece;
-  height: 60px;
-  border-radius: 5px;
-  width: 80%;
-  margin: 20px auto;
-  padding: 20px;
+  height: 40px;
+  padding: 10px;
 `;
 
 const SearchBar = () => {
   return (
     <Container>
+      <Ionicons name="search-outline" size={20} />
       <Input placeholder="Search notes" />
     </Container>
   );
