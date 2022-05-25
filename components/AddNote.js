@@ -7,9 +7,10 @@ import {
   FlatList,
   ScrollView,
 } from "react-native";
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import uuid from "react-native-uuid";
 import { Context } from "../ContextProvider";
+import { clear } from "react-native/Libraries/LogBox/Data/LogBoxData";
 
 const Container = styled.View``;
 const Input = styled.TextInput`
@@ -60,9 +61,11 @@ const data = [
 function AddNote() {
   const ctx = useContext(Context);
   const [noteText, setNoteText] = useState("");
+  const inputRef = useRef(null);
   const handleSaveNote = () => {
     ctx.setNotes([{ text: noteText, id: uuid.v4() }, ...ctx.notes]);
     console.log(ctx.notes);
+    inputRef.current.clear();
   };
 
   return (
@@ -74,6 +77,7 @@ function AddNote() {
         numberOfLines={8}
         textAlignVertical="top"
         onChangeText={(text) => setNoteText(text)}
+        ref={inputRef}
       />
       <Button onPress={handleSaveNote}>
         <ButtonText>Add Note</ButtonText>
