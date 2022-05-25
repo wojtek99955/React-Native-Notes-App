@@ -12,7 +12,15 @@ export default function App() {
   return (
     <ContextProvider>
       <NavigationContainer>
-        <Tabs.Navigator>
+        <Tabs.Navigator
+          screenOptions={{
+            tabBarActiveTintColor: "#fdbe00",
+            tabBarInactiveTintColor: "gray",
+            tabBarLabelStyle: {
+              fontSize: 15,
+            },
+          }}
+        >
           <Tabs.Screen
             name="Add Note"
             component={AddNote}
