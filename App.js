@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import AddNote from "./components/AddNote";
 import NotesList from "./components/NotesList";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import Settings from "./components/Settings";
 
 export default function App() {
   const Tabs = createBottomTabNavigator();
@@ -37,6 +38,13 @@ export default function App() {
               tabBarIcon: () => (
                 <Ionicons name="reorder-four-outline" size={25} />
               ),
+            }}
+          />
+          <Tabs.Screen
+            name="Settings"
+            component={Settings}
+            options={{
+              tabBarIcon: () => <Ionicons name="settings-outline" size={25} />,
             }}
           />
         </Tabs.Navigator>
