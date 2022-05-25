@@ -14,16 +14,27 @@ const NoteList = ({ navigation }) => {
   const ctx = useContext(Context);
   const { notes } = ctx;
 
+  const FooterComponent = () => {
+    if (notes.length > 2) {
+      return (
+        <IconContainer onPress={() => navigation.navigate("Add Note")}>
+          <Ionicons name="add-circle" color="#fdbe00" size={60} />
+        </IconContainer>
+      );
+    } else {
+      return null;
+    }
+  };
+
   console.log(notes);
   return (
     <View>
       <SearchBar />
-      <FlatList data={ctx.notes} renderItem={Note} />
-      {notes.length > 2 ? (
-        <IconContainer onPress={() => navigation.navigate("Add Note")}>
-          <Ionicons name="add-circle" color="#fdbe00" size={60} />
-        </IconContainer>
-      ) : null}
+      <FlatList
+        data={ctx.notes}
+        renderItem={Note}
+        ListFooterComponent={<FooterComponent />}
+      />
     </View>
   );
 };
