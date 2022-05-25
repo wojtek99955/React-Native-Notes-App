@@ -13,8 +13,24 @@ export default function App() {
     <ContextProvider>
       <NavigationContainer>
         <Tabs.Navigator>
-          <Tabs.Screen name="Add Note" component={AddNote} />
-          <Tabs.Screen name="Notes List" component={NotesList} />
+          <Tabs.Screen
+            name="Add Note"
+            component={AddNote}
+            options={{
+              tabBarIcon: () => (
+                <Ionicons name="add-circle-outline" size={25} />
+              ),
+            }}
+          />
+          <Tabs.Screen
+            name="Notes List"
+            component={NotesList}
+            options={{
+              tabBarIcon: () => (
+                <Ionicons name="reorder-four-outline" size={25} />
+              ),
+            }}
+          />
         </Tabs.Navigator>
       </NavigationContainer>
     </ContextProvider>
