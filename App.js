@@ -41,7 +41,7 @@ export default function App() {
             options={{
               tabBarIcon: ({ focused }) => (
                 <Ionicons
-                  name={focused ? "reorder-four" : "reorder-four-outline"}
+                  name={focused ? "document" : "document-outline"}
                   color={focused ? "#fdbe00" : null}
                   size={28}
                 />
