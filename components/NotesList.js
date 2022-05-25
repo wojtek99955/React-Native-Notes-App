@@ -1,14 +1,18 @@
-import styled from "styled-components";
-import { View, Text } from "react-native";
+import { View, Text, FlatList } from "react-native";
+import { useContext } from "react";
+import { Context } from "../ContextProvider";
+import Note from "./Note";
 
-import React from "react";
+const NoteList = () => {
+  const ctx = useContext(Context);
+  const { notes } = ctx;
 
-function NotesList() {
+  console.log(notes);
   return (
     <View>
-      <Text>Notes List</Text>
+      <FlatList data={ctx.notes} renderItem={Note} />
     </View>
   );
-}
+};
 
-export default NotesList;
+export default NoteList;
