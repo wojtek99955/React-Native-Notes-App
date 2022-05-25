@@ -10,7 +10,7 @@ const Container = styled.View`
   margin: 20px auto;
   padding: 10px;
   flex-direction: row;
-  border-radius: 5px;
+  border-radius: 10px;
 `;
 const Input = styled.TextInput`
   background-color: #cecece;
