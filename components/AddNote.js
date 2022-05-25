@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { useState } from "react";
 
 const Container = styled.View``;
 const Input = styled.TextInput`
@@ -32,6 +33,8 @@ const ButtonText = styled.Text`
 `;
 
 function AddNote() {
+  const [noteText, setNoteText] = useState("");
+
   return (
     <Container>
       <Title>Create Your Note!</Title>
@@ -40,6 +43,7 @@ function AddNote() {
         multiline={true}
         numberOfLines={8}
         textAlignVertical="top"
+        onChangeText={setNoteText}
       />
       <Button>
         <ButtonText>Add Note</ButtonText>
