@@ -8,7 +8,7 @@ const Input = styled.TextInput`
   border-radius: 5px;
   width: 80%;
   margin: 20px auto;
-  padding: 10px;
+  padding: 20px;
 `;
 
 const SearchBar = () => {
