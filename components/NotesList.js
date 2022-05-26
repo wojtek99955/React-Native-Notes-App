@@ -30,7 +30,9 @@ const NoteList = ({ navigation }) => {
   return (
     <View>
       <SearchBar />
+
       <FlatList
+        numColumns={2}
         data={ctx.notes}
         renderItem={Note}
         ListFooterComponent={<FooterComponent />}
