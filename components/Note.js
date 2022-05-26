@@ -1,9 +1,8 @@
-import { View, Text } from "react-native";
+import { View, Text, Dimensions } from "react-native";
 import styled from "styled-components";
 const Container = styled.View`
   background-color: white;
-  margin: 10px auto;
-  width: 80%;
+  margin: 5px;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 2px 1px 6px rgba(206, 206, 206, 0.25);
@@ -13,9 +12,11 @@ const NoteText = styled.Text`
   font-size: 25px;
 `;
 
+const NoteWidth = Dimensions.get("window").width;
+
 const Note = ({ item }) => {
   return (
-    <Container>
+    <Container style={{ width: (NoteWidth - 20) / 2 }}>
       <NoteText>{item.text}</NoteText>
     </Container>
   );
