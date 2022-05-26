@@ -62,9 +62,13 @@ function AddNote() {
   const ctx = useContext(Context);
   const [noteText, setNoteText] = useState("");
   const inputRef = useRef(null);
+  const date = new Date();
   const handleSaveNote = () => {
     if (noteText.length > 0) {
-      ctx.setNotes([{ text: noteText, id: uuid.v4() }, ...ctx.notes]);
+      ctx.setNotes([
+        { text: noteText, id: uuid.v4(), date: date.toLocaleDateString() },
+        ...ctx.notes,
+      ]);
       console.log(ctx.notes);
     } else {
       return ctx.notes;
