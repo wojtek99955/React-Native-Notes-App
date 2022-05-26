@@ -2,7 +2,7 @@ import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { useContext } from "react";
 import { Context } from "../ContextProvider";
 import Note from "./Note/Note";
-import SearchBar from "./SearchBar";
+import SearchBar from "./SearchBar/SearchBar";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styled from "styled-components";
 
