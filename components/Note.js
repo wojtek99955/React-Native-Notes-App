@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Container = styled.View`
   background-color: white;
   margin: 5px;
-  padding: 10px;
+  padding: 22px 10px;
   border-radius: 10px;
   box-shadow: 2px 1px 6px rgba(206, 206, 206, 0.25);
 `;
