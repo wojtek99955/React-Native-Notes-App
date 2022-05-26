@@ -42,22 +42,6 @@ const ButtonText = styled.Text`
   font-weight: 600;
 `;
 
-const Item = styled.Text`
-  font-size: 30px;
-  color: "gren";
-`;
-
-const data = [
-  {
-    text: "efff",
-    id: 11,
-  },
-  {
-    text: "to jaa",
-    id: 22,
-  },
-];
-
 function AddNote() {
   const ctx = useContext(Context);
   const [noteText, setNoteText] = useState("");
