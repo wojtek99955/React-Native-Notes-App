@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   FlatList,
   ScrollView,
+  Keyboard,
+  TouchableWithoutFeedback,
 } from "react-native";
 import { useState, useContext, useRef } from "react";
 import uuid from "react-native-uuid";
@@ -60,20 +62,22 @@ function AddNote() {
   };
 
   return (
-    <Container>
-      <Title>Create Your Note!</Title>
-      <Input
-        placeholder="add note"
-        multiline={true}
-        numberOfLines={8}
-        textAlignVertical="top"
-        onChangeText={(text) => setNoteText(text)}
-        ref={inputRef}
-      />
-      <Button onPress={handleSaveNote}>
-        <ButtonText>Add Note</ButtonText>
-      </Button>
-    </Container>
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <Container>
+        <Title>Create Your Note!</Title>
+        <Input
+          placeholder="add note"
+          multiline={true}
+          numberOfLines={8}
+          textAlignVertical="top"
+          onChangeText={(text) => setNoteText(text)}
+          ref={inputRef}
+        />
+        <Button onPress={handleSaveNote}>
+          <ButtonText>Add Note</ButtonText>
+        </Button>
+      </Container>
+    </TouchableWithoutFeedback>
   );
 }
 
