@@ -8,6 +8,7 @@ import NotesList from "./components/NotesList";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Settings from "./components/Settings";
 import NoteListScreen from "./screens/NoteListScreen";
+import "react-native-gesture-handler";
 
 export default function App() {
   const Tabs = createBottomTabNavigator();
