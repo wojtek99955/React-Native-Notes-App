@@ -11,10 +11,14 @@ export const Container = styled.Pressable`
   padding: 22px 10px;
   border-radius: 10px;
   box-shadow: 2px 1px 6px rgba(206, 206, 206, 0.25);
+  position: relative;
 `;
 export const DateText = styled.Text`
   font-size: 12px;
   margin-top: 20px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 `;
 
 export const NoteText = styled.Text`
@@ -28,6 +32,7 @@ const IconContainer = styled.TouchableOpacity`
 const ShowMore = styled.Text`
   color: #fdbe00;
   margin-top: 10px;
+  margin-bottom: 20px;
 `;
 
 const NoteList = ({ navigation }) => {
