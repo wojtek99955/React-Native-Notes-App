@@ -9,6 +9,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import Settings from "./components/Settings";
 import NoteListScreen from "./screens/NoteListScreen";
 import "react-native-gesture-handler";
+import SettingsScreens from "./screens/SettingsScreens";
 
 export default function App() {
   const Tabs = createBottomTabNavigator();
@@ -53,7 +54,7 @@ export default function App() {
           />
           <Tabs.Screen
             name="Settings"
-            component={Settings}
+            component={SettingsScreens}
             options={{
               tabBarIcon: ({ focused }) => (
                 <Ionicons
@@ -62,6 +63,7 @@ export default function App() {
                   size={28}
                 />
               ),
+              headerShown: false,
             }}
           />
         </Tabs.Navigator>
