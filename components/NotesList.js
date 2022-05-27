@@ -33,6 +33,11 @@ const IconContainer = styled.TouchableOpacity`
   align-items: center;
 `;
 
+const ShowMore = styled.Text`
+  color: blue;
+  margin-top: 10px;
+`;
+
 const NoteList = ({ navigation }) => {
   const ctx = useContext(Context);
   const { notes } = ctx;
@@ -56,7 +61,10 @@ const NoteList = ({ navigation }) => {
         style={{ width: (NoteWidth - 20) / 2 }}
         onPress={() => navigation.navigate("Details", item)}
       >
-        <NoteText>{item.text}</NoteText>
+        <NoteText>
+          {item.text.length > 50 ? `${item.text.slice(0, 50)}...` : item.text}
+        </NoteText>
+        {item.text.length > 50 ? <ShowMore>More...</ShowMore> : null}
         <DateText>{item.date}</DateText>
       </Container>
     );
