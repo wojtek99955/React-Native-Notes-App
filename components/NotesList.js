@@ -1,12 +1,4 @@
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  Dimensions,
-  Button,
-  Pressable,
-} from "react-native";
+import { View, Text, FlatList, Dimensions } from "react-native";
 import { useContext } from "react";
 import { Context } from "../ContextProvider";
 import SearchBar from "./SearchBar/SearchBar";
@@ -34,7 +26,7 @@ const IconContainer = styled.TouchableOpacity`
 `;
 
 const ShowMore = styled.Text`
-  color: blue;
+  color: #fdbe00;
   margin-top: 10px;
 `;
 
