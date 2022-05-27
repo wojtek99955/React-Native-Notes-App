@@ -19,10 +19,12 @@ export const DateText = styled.Text`
   position: absolute;
   bottom: 10px;
   left: 10px;
+  padding-top: 10px;
 `;
 
 export const NoteText = styled.Text`
   font-size: 25px;
+  margin-bottom: 22px;
 `;
 
 const IconContainer = styled.TouchableOpacity`
@@ -31,7 +33,6 @@ const IconContainer = styled.TouchableOpacity`
 
 const ShowMore = styled.Text`
   color: #fdbe00;
-  margin-top: 10px;
   margin-bottom: 20px;
 `;
 
