@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Dimensions,
   Button,
+  Pressable,
 } from "react-native";
 import { useContext } from "react";
 import { Context } from "../ContextProvider";
@@ -12,7 +13,7 @@ import SearchBar from "./SearchBar/SearchBar";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styled from "styled-components";
 
-export const Container = styled.View`
+export const Container = styled.Pressable`
   background-color: white;
   margin: 5px;
   padding: 22px 10px;
@@ -51,13 +52,12 @@ const NoteList = ({ navigation }) => {
   const Note = ({ item }) => {
     const NoteWidth = Dimensions.get("window").width;
     return (
-      <Container style={{ width: (NoteWidth - 20) / 2 }}>
+      <Container
+        style={{ width: (NoteWidth - 20) / 2 }}
+        onPress={() => navigation.navigate("Details", item)}
+      >
         <NoteText>{item.text}</NoteText>
         <DateText>{item.date}</DateText>
-        <Button
-          title="details"
-          onPress={() => navigation.navigate("Details", item)}
-        />
       </Container>
     );
   };
