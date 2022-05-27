@@ -10,7 +10,6 @@ import {
 import { useState, useContext, useRef } from "react";
 import uuid from "react-native-uuid";
 import { Context } from "../ContextProvider";
-import { clear } from "react-native/Libraries/LogBox/Data/LogBoxData";
 
 const Container = styled.View``;
 const Input = styled.TextInput`
@@ -53,7 +52,6 @@ function AddNote() {
         { text: noteText, id: uuid.v4(), date: date.toLocaleDateString() },
         ...ctx.notes,
       ]);
-      console.log(ctx.notes);
     } else {
       return ctx.notes;
     }
