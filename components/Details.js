@@ -1,12 +1,25 @@
 import { View, Text } from "react-native";
-import React from "react";
+import styled from "styled-components";
 
-const Details = ({ navigation, route }) => {
+const Container = styled.View`
+  background-color: white;
+  margin: 30px 10px;
+  border-radius: 10px;
+  padding: 10px;
+`;
+const NoteText = styled.Text`
+  font-size: 25px;
+`;
+const Date = styled.Text`
+  margin-top: 40px;
+`;
+const Details = ({ route }) => {
   const item = route.params;
   return (
-    <View>
-      <Text>{item.text}</Text>
-    </View>
+    <Container>
+      <NoteText>{item.text}</NoteText>
+      <Date>{item.date}</Date>
+    </Container>
   );
 };
 
