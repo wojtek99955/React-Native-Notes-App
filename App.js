@@ -48,6 +48,7 @@ export default function App() {
                   size={28}
                 />
               ),
+              headerShown: false,
             }}
           />
           <Tabs.Screen
