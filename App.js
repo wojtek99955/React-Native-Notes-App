@@ -7,6 +7,7 @@ import AddNote from "./components/AddNote";
 import NotesList from "./components/NotesList";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Settings from "./components/Settings";
+import NoteListScreen from "./screens/NoteListScreen";
 
 export default function App() {
   const Tabs = createBottomTabNavigator();
@@ -37,7 +38,7 @@ export default function App() {
           />
           <Tabs.Screen
             name="Notes List"
-            component={NotesList}
+            component={NoteListScreen}
             options={{
               tabBarIcon: ({ focused }) => (
                 <Ionicons
