@@ -75,7 +75,7 @@ const NoteList = ({ navigation }) => {
     };
     return (
       <>
-        <NoteModal visible={item.modalOpen}>{item.text}</NoteModal>
+        <NoteModal visible={item.modalOpen} note={item} />
         <Container
           style={{ width: (NoteWidth - 20) / 2 }}
           onPress={() => navigation.navigate("Details", item)}
