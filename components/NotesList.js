@@ -6,7 +6,7 @@ import {
   Button,
   Vibration,
 } from "react-native";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Context } from "../ContextProvider";
 import SearchBar from "./SearchBar/SearchBar";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -46,8 +46,6 @@ const ShowMore = styled.Text`
 `;
 
 const NoteList = ({ navigation }) => {
-  const [modalVisible, setModalVisible] = useState("");
-
   const ctx = useContext(Context);
   const { notes } = ctx;
 
