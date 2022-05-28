@@ -2,31 +2,13 @@ import { View, FlatList, Dimensions, Vibration } from "react-native";
 import { useContext } from "react";
 import { Context } from "../../ContextProvider";
 import SearchBar from "../SearchBar/SearchBar";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import NoteModal from "../NoteModal";
-import {
-  Container,
-  DateText,
-  NoteText,
-  IconContainer,
-  ShowMore,
-} from "./NotesListStyle";
+import { Container, DateText, NoteText, ShowMore } from "./NotesListStyle";
+import NoteListFooter from "./NoteListFooter";
 
 const NoteList = ({ navigation }) => {
   const ctx = useContext(Context);
   const { notes } = ctx;
-
-  const FooterComponent = () => {
-    if (notes.length > 2) {
-      return (
-        <IconContainer onPress={() => navigation.navigate("Add Note")}>
-          <Ionicons name="add-circle" color="#fdbe00" size={60} />
-        </IconContainer>
-      );
-    } else {
-      return null;
-    }
-  };
 
   const Note = ({ item }) => {
     const NoteWidth = Dimensions.get("window").width;
@@ -79,7 +61,7 @@ const NoteList = ({ navigation }) => {
         numColumns={2}
         data={ctx.notes}
         renderItem={Note}
-        ListFooterComponent={<FooterComponent />}
+        ListFooterComponent={<NoteListFooter navigation={navigation} />}
       />
     </View>
   );
