@@ -12,6 +12,7 @@ const TextContainer = styled.View`
   background-color: white;
   padding: 50px;
   width: 70%;
+  border-radius: 10px;
 `;
 
 const NoteText = styled.Text`
