@@ -1,9 +1,17 @@
-import { View, Text, FlatList, Dimensions } from "react-native";
-import { useContext } from "react";
+import {
+  View,
+  Text,
+  FlatList,
+  Dimensions,
+  Button,
+  Vibration,
+} from "react-native";
+import { useContext, useState } from "react";
 import { Context } from "../ContextProvider";
 import SearchBar from "./SearchBar/SearchBar";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styled from "styled-components";
+import NoteModal from "./NoteModal";
 
 export const Container = styled.Pressable`
   background-color: white;
@@ -37,6 +45,8 @@ const ShowMore = styled.Text`
 `;
 
 const NoteList = ({ navigation }) => {
+  const [modalVisible, setModalVisible] = useState("");
+
   const ctx = useContext(Context);
   const { notes } = ctx;
 
@@ -54,17 +64,31 @@ const NoteList = ({ navigation }) => {
 
   const Note = ({ item }) => {
     const NoteWidth = Dimensions.get("window").width;
+    const handleOpen = (id) => {
+      const elementId = ctx.notes.findIndex((el) => el.id === id);
+      const newArray = [...ctx.notes];
+      newArray[elementId] = {
+        ...newArray[elementId],
+        modalOpen: !newArray[elementId].modalOpen,
+      };
+      ctx.setNotes(newArray);
+    };
     return (
-      <Container
-        style={{ width: (NoteWidth - 20) / 2 }}
-        onPress={() => navigation.navigate("Details", item)}
-      >
-        <NoteText>
-          {item.text.length > 50 ? `${item.text.slice(0, 50)}...` : item.text}
-        </NoteText>
-        {item.text.length > 50 ? <ShowMore>More...</ShowMore> : null}
-        <DateText>{item.date}</DateText>
-      </Container>
+      <>
+        <NoteModal visible={item.modalOpen}>{item.text}</NoteModal>
+        <Container
+          style={{ width: (NoteWidth - 20) / 2 }}
+          onPress={() => navigation.navigate("Details", item)}
+          onLongPress={() => handleOpen(item.id)}
+          onPressOut={() => handleOpen(item.id)}
+        >
+          <NoteText>
+            {item.text.length > 50 ? `${item.text.slice(0, 50)}...` : item.text}
+          </NoteText>
+          {item.text.length > 50 ? <ShowMore>More...</ShowMore> : null}
+          <DateText>{item.date}</DateText>
+        </Container>
+      </>
     );
   };
 
