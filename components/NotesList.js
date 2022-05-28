@@ -37,6 +37,7 @@ export const NoteText = styled.Text`
 
 const IconContainer = styled.TouchableOpacity`
   align-items: center;
+  margin-top: 30px;
 `;
 
 const ShowMore = styled.Text`
