@@ -51,7 +51,12 @@ function AddNote() {
   const handleSaveNote = () => {
     if (noteText.length > 0) {
       ctx.setNotes([
-        { text: noteText, id: uuid.v4(), date: date.toLocaleDateString() },
+        {
+          text: noteText,
+          id: uuid.v4(),
+          date: date.toLocaleDateString(),
+          modalOpen: false,
+        },
         ...ctx.notes,
       ]);
     } else {
