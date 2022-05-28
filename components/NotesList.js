@@ -88,7 +88,10 @@ const NoteList = ({ navigation }) => {
         <Container
           style={{ width: (NoteWidth - 20) / 2 }}
           onPress={() => navigation.navigate("Details", item)}
-          onLongPress={() => handleOpen(item.id)}
+          onLongPress={() => {
+            handleOpen(item.id);
+            Vibration.vibrate(50);
+          }}
           onPressOut={() => handleClose(item.id)}
         >
           <NoteText>
