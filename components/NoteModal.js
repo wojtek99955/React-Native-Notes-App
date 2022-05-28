@@ -17,12 +17,16 @@ const TextContainer = styled.View`
 const NoteText = styled.Text`
   font-size: 22px;
 `;
-const NoteModal = ({ children, visible }) => {
+const Date = styled.Text`
+  margin-top: 20px;
+`;
+const NoteModal = ({ note, visible }) => {
   return (
     <Modal visible={visible} transparent={true}>
       <Container>
         <TextContainer>
-          <NoteText>{children}</NoteText>
+          <NoteText>{note.text}</NoteText>
+          <Date>{note.date}</Date>
         </TextContainer>
       </Container>
     </Modal>
