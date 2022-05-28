@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
-import NotesList from "../components/NotesList";
+import NotesList from "../components/NotesList/NotesList";
 import Details from "../components/Details";
 
 const Stack = createStackNavigator();

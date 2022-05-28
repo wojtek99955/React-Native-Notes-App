@@ -4,7 +4,7 @@ import ContextProvider from "./ContextProvider";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import AddNote from "./components/AddNote";
-import NotesList from "./components/NotesList";
+import NotesList from "./components/NotesList/NotesList";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Settings from "./components/Settings";
 import NoteListScreen from "./screens/NoteListScreen";

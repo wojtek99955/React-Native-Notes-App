@@ -1,49 +1,16 @@
-import {
-  View,
-  Text,
-  FlatList,
-  Dimensions,
-  Button,
-  Vibration,
-} from "react-native";
+import { View, FlatList, Dimensions, Vibration } from "react-native";
 import { useContext } from "react";
-import { Context } from "../ContextProvider";
-import SearchBar from "./SearchBar/SearchBar";
+import { Context } from "../../ContextProvider";
+import SearchBar from "../SearchBar/SearchBar";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import styled from "styled-components";
-import NoteModal from "./NoteModal";
-
-export const Container = styled.Pressable`
-  background-color: white;
-  margin: 5px;
-  padding: 22px 10px;
-  border-radius: 10px;
-  box-shadow: 2px 1px 6px rgba(206, 206, 206, 0.25);
-  position: relative;
-`;
-export const DateText = styled.Text`
-  font-size: 12px;
-  margin-top: 20px;
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  padding-top: 10px;
-`;
-
-export const NoteText = styled.Text`
-  font-size: 25px;
-  margin-bottom: 22px;
-`;
-
-const IconContainer = styled.TouchableOpacity`
-  align-items: center;
-  margin-top: 30px;
-`;
-
-const ShowMore = styled.Text`
-  color: #fdbe00;
-  margin-bottom: 20px;
-`;
+import NoteModal from "../NoteModal";
+import {
+  Container,
+  DateText,
+  NoteText,
+  IconContainer,
+  ShowMore,
+} from "./NotesListStyle";
 
 const NoteList = ({ navigation }) => {
   const ctx = useContext(Context);
