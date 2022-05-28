@@ -69,7 +69,16 @@ const NoteList = ({ navigation }) => {
       const newArray = [...ctx.notes];
       newArray[elementId] = {
         ...newArray[elementId],
-        modalOpen: !newArray[elementId].modalOpen,
+        modalOpen: true,
+      };
+      ctx.setNotes(newArray);
+    };
+    const handleClose = (id) => {
+      const elementId = ctx.notes.findIndex((el) => el.id === id);
+      const newArray = [...ctx.notes];
+      newArray[elementId] = {
+        ...newArray[elementId],
+        modalOpen: false,
       };
       ctx.setNotes(newArray);
     };
@@ -80,7 +89,7 @@ const NoteList = ({ navigation }) => {
           style={{ width: (NoteWidth - 20) / 2 }}
           onPress={() => navigation.navigate("Details", item)}
           onLongPress={() => handleOpen(item.id)}
-          onPressOut={() => handleOpen(item.id)}
+          onPressOut={() => handleClose(item.id)}
         >
           <NoteText>
             {item.text.length > 50 ? `${item.text.slice(0, 50)}...` : item.text}
