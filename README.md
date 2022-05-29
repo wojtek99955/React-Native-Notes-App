@@ -7,6 +7,7 @@ notes app
 ## Technologies
 
 - react-native
+- styled-components
 
 ## Installation
 
