@@ -5,17 +5,16 @@ const LinkText = styled.Text`
   font-size: 25px;
 `;
 const Settings = ({ navigation }) => {
+  const links = ["Preferences", "Privacy Policy", "About"];
   return (
     <>
-      <PreferencesLink onPress={() => navigation.navigate("Preferences")}>
-        <LinkText>Preferences</LinkText>
-      </PreferencesLink>
-      <PreferencesLink onPress={() => navigation.navigate("Privacy Policy")}>
-        <LinkText>Privacy Policy</LinkText>
-      </PreferencesLink>
-      <PreferencesLink onPress={() => navigation.navigate("About")}>
-        <LinkText>About</LinkText>
-      </PreferencesLink>
+      {links.map((link) => {
+        return (
+          <PreferencesLink key={link} onPress={() => navigation.navigate(link)}>
+            <LinkText>{link}</LinkText>
+          </PreferencesLink>
+        );
+      })}
     </>
   );
 };
