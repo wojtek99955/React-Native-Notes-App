@@ -21,7 +21,7 @@ const Preferences = ({ navigation }) => {
     <Container>
       {links.map((link) => {
         return (
-          <>
+          <View key={link}>
             <PreferencesLink
               key={link}
               onPress={() => navigation.navigate(link)}
@@ -29,7 +29,7 @@ const Preferences = ({ navigation }) => {
               <LinkText>{link}</LinkText>
             </PreferencesLink>
             <Divider></Divider>
-          </>
+          </View>
         );
       })}
     </Container>

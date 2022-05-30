@@ -17,15 +17,12 @@ const Settings = ({ navigation }) => {
     <>
       {links.map((link) => {
         return (
-          <>
-            <PreferencesLink
-              key={link}
-              onPress={() => navigation.navigate(link)}
-            >
+          <View key={link}>
+            <PreferencesLink onPress={() => navigation.navigate(link)}>
               <LinkText>{link}</LinkText>
             </PreferencesLink>
             <Divider></Divider>
-          </>
+          </View>
         );
       })}
     </>

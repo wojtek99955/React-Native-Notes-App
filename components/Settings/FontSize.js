@@ -36,7 +36,7 @@ const FontSize = () => {
       <BtnsContainer>
         {sizes.map((size) => {
           return (
-            <Button onPress={() => setFontSize(size)}>
+            <Button key={size.name} onPress={() => setFontSize(size)}>
               <BtnText style={{ fontSize: size.size }}>{size.name}</BtnText>
             </Button>
           );
