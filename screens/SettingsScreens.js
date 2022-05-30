@@ -8,7 +8,11 @@ const SettingsScreens = () => {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Settings" component={Settings} />
+      <Stack.Screen
+        name="Settings Main"
+        options={{ title: "Settings" }}
+        component={Settings}
+      />
       <Stack.Screen name="Preferences" component={Preferences} />
     </Stack.Navigator>
   );
