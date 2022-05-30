@@ -1,19 +1,38 @@
 import { View, Text } from "react-native";
 import React from "react";
 import styled from "styled-components";
-const PreferencesLink = styled.TouchableOpacity``;
-const LinkText = styled.Text``;
-
+const PreferencesLink = styled.TouchableOpacity`
+  padding: 10px;
+`;
+const LinkText = styled.Text`
+  font-size: 25px;
+`;
+const Divider = styled.View`
+  width: 100%;
+  border-bottom-color: grey;
+  border-bottom-width: 1px;
+`;
+const Container = styled.View`
+  padding: 10px;
+`;
+const links = ["Dark Mode", "Font Size"];
 const Preferences = ({ navigation }) => {
   return (
-    <View>
-      <PreferencesLink onPress={() => navigation.navigate("Dark Mode")}>
-        <LinkText>Dark Mode</LinkText>
-      </PreferencesLink>
-      <PreferencesLink onPress={() => navigation.navigate("Font Size")}>
-        <LinkText>Font Size</LinkText>
-      </PreferencesLink>
-    </View>
+    <Container>
+      {links.map((link) => {
+        return (
+          <>
+            <PreferencesLink
+              key={link}
+              onPress={() => navigation.navigate(link)}
+            >
+              <LinkText>{link}</LinkText>
+            </PreferencesLink>
+            <Divider></Divider>
+          </>
+        );
+      })}
+    </Container>
   );
 };
 
