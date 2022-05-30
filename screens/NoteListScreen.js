@@ -7,7 +7,11 @@ const Stack = createStackNavigator();
 const NoteListScreen = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Notes List" component={NotesList} />
+      <Stack.Screen
+        name="List"
+        options={{ title: "Notes List" }}
+        component={NotesList}
+      />
       <Stack.Screen name="Details" component={Details} />
     </Stack.Navigator>
   );
