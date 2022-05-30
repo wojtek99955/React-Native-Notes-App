@@ -5,6 +5,7 @@ export const Context = createContext();
 function ContextProvider({ children }) {
   const [notes, setNotes] = useState([]);
   const [searchNote, setSearchNote] = useState("");
+  const [fontSize, setFontSize] = useState({ name: "medium", size: 25 });
 
   return (
     <Context.Provider
@@ -13,6 +14,8 @@ function ContextProvider({ children }) {
         setNotes,
         searchNote,
         setSearchNote,
+        fontSize,
+        setFontSize,
       }}
     >
       {children}
