@@ -3,6 +3,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Settings from "../components/Settings/Settings";
 import Preferences from "../components/Settings/Preferences";
+import PrivacyPolicy from "../components/Settings/PrivacyPolicy";
 
 const SettingsScreens = () => {
   const Stack = createStackNavigator();
@@ -14,6 +15,7 @@ const SettingsScreens = () => {
         component={Settings}
       />
       <Stack.Screen name="Preferences" component={Preferences} />
+      <Stack.Screen name="Privacy Policy" component={PrivacyPolicy} />
     </Stack.Navigator>
   );
 };
