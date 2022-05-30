@@ -26,7 +26,7 @@ export const DateText = styled.Text`
 `;
 
 export const NoteText = styled.Text`
-  font-size: 25px;
+  font-size: ${({ fontSize }) => `${fontSize}px`};
   margin-bottom: 22px;
 `;
 
