@@ -5,6 +5,7 @@ import Settings from "../components/Settings/Settings";
 import Preferences from "../components/Settings/Preferences";
 import PrivacyPolicy from "../components/Settings/PrivacyPolicy";
 import DarkMode from "../components/Settings/DarkMode";
+import About from "../components/Settings/About";
 
 const SettingsScreens = () => {
   const Stack = createStackNavigator();
@@ -18,6 +19,7 @@ const SettingsScreens = () => {
       <Stack.Screen name="Preferences" component={Preferences} />
       <Stack.Screen name="Privacy Policy" component={PrivacyPolicy} />
       <Stack.Screen name="Dark Mode" component={DarkMode} />
+      <Stack.Screen name="About" component={About} />
     </Stack.Navigator>
   );
 };
