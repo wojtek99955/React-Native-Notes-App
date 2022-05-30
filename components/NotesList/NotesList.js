@@ -9,6 +9,9 @@ import NoteListFooter from "./NoteListFooter";
 const NoteList = ({ navigation }) => {
   const ctx = useContext(Context);
   const { notes } = ctx;
+  const filteredNotes = notes.filter((note) => {
+    return note.text.toLowerCase().includes(ctx.searchNote.toLowerCase());
+  });
 
   const Note = ({ item }) => {
     const NoteWidth = Dimensions.get("window").width;
@@ -52,14 +55,13 @@ const NoteList = ({ navigation }) => {
     );
   };
 
-  console.log(notes);
   return (
     <View>
       <SearchBar />
 
       <FlatList
         numColumns={2}
-        data={ctx.notes}
+        data={filteredNotes}
         renderItem={Note}
         ListFooterComponent={<NoteListFooter navigation={navigation} />}
       />
