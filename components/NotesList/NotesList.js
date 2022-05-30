@@ -45,7 +45,7 @@ const NoteList = ({ navigation }) => {
           }}
           onPressOut={() => handleClose(item.id)}
         >
-          <NoteText>
+          <NoteText fontSize={ctx.fontSize.size}>
             {item.text.length > 50 ? `${item.text.slice(0, 50)}...` : item.text}
           </NoteText>
           {item.text.length > 50 ? <ShowMore>More...</ShowMore> : null}
