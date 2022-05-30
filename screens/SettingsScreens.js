@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Settings from "../components/Settings/Settings";
-import Preferences from "../Preferences";
+import Preferences from "../components/Settings/Preferences";
 
 const SettingsScreens = () => {
   const Stack = createStackNavigator();
