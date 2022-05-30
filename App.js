@@ -6,7 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import AddNote from "./components/AddNote";
 import NotesList from "./components/NotesList/NotesList";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import Settings from "./components/Settings";
+import Settings from "./components/Settings/Settings";
 import NoteListScreen from "./screens/NoteListScreen";
 import "react-native-gesture-handler";
 import SettingsScreens from "./screens/SettingsScreens";
