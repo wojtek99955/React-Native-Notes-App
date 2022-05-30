@@ -10,6 +10,9 @@ const Preferences = ({ navigation }) => {
       <PreferencesLink onPress={() => navigation.navigate("Dark Mode")}>
         <LinkText>Dark Mode</LinkText>
       </PreferencesLink>
+      <PreferencesLink onPress={() => navigation.navigate("Font Size")}>
+        <LinkText>Font Size</LinkText>
+      </PreferencesLink>
     </View>
   );
 };

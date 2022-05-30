@@ -6,6 +6,7 @@ import Preferences from "../components/Settings/Preferences";
 import PrivacyPolicy from "../components/Settings/PrivacyPolicy";
 import DarkMode from "../components/Settings/DarkMode";
 import About from "../components/Settings/About";
+import FontSize from "../components/Settings/FontSize";
 
 const SettingsScreens = () => {
   const Stack = createStackNavigator();
@@ -20,6 +21,7 @@ const SettingsScreens = () => {
       <Stack.Screen name="Privacy Policy" component={PrivacyPolicy} />
       <Stack.Screen name="Dark Mode" component={DarkMode} />
       <Stack.Screen name="About" component={About} />
+      <Stack.Screen name="Font Size" component={FontSize} />
     </Stack.Navigator>
   );
 };
