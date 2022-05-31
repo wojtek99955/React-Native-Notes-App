@@ -81,7 +81,7 @@ const Details = ({ route, navigation }) => {
                 setModalVisible(false);
               }}
             >
-              <ModalBtnText>Sure</ModalBtnText>
+              <ModalBtnText>Yes</ModalBtnText>
             </ModalBtn>
             <ModalBtn
               onPress={() => {
