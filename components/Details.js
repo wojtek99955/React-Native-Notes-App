@@ -3,10 +3,7 @@ import styled from "styled-components";
 import { Context } from "../ContextProvider";
 import { useContext } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
-const Wrapper = styled.View`
-  flex: 1;
-  position: relative;
-`;
+const Wrapper = styled.ScrollView``;
 const Container = styled.View`
   background-color: white;
   margin: 30px 10px;
@@ -19,10 +16,10 @@ const NoteText = styled.Text`
 const Date = styled.Text`
   margin-top: 40px;
 `;
+
 const IconContainer = styled.View`
-  position: absolute;
-  bottom: 100px;
-  right: 50px;
+  align-items: flex-end;
+  padding: 0 40px;
 `;
 const Details = ({ route }) => {
   const item = route.params;
