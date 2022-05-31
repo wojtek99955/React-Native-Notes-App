@@ -18,7 +18,7 @@ const Input = styled.TextInput`
   width: 100%;
   background-color: white;
   padding: 15px;
-  font-size: 25px;
+  font-size: ${({ fontSize }) => `${fontSize}px`};
   height: 200px;
 `;
 const Title = styled.Text`
@@ -77,6 +77,7 @@ function AddNote() {
           textAlignVertical="top"
           onChangeText={(text) => setNoteText(text)}
           ref={inputRef}
+          fontSize={ctx.fontSize.size}
         />
         <Button onPress={handleSaveNote}>
           <ButtonText>Add Note</ButtonText>
