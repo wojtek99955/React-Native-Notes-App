@@ -1,5 +1,7 @@
 import { View, Text } from "react-native";
 import styled from "styled-components";
+import { Context } from "../ContextProvider";
+import { useContext } from "react";
 
 const Container = styled.View`
   background-color: white;
@@ -8,16 +10,17 @@ const Container = styled.View`
   padding: 10px;
 `;
 const NoteText = styled.Text`
-  font-size: 25px;
+  font-size: ${({ fontSize }) => `${fontSize}px`};
 `;
 const Date = styled.Text`
   margin-top: 40px;
 `;
 const Details = ({ route }) => {
   const item = route.params;
+  const { fontSize } = useContext(Context);
   return (
     <Container>
-      <NoteText>{item.text}</NoteText>
+      <NoteText fontSize={fontSize.size}>{item.text}</NoteText>
       <Date>{item.date}</Date>
     </Container>
   );
