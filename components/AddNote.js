@@ -64,6 +64,7 @@ function AddNote() {
     }
     inputRef.current.clear();
     setNoteText("");
+    Keyboard.dismiss();
   };
 
   return (
