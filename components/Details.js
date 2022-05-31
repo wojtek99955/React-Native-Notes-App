@@ -26,7 +26,22 @@ const ModalContainer = styled.View`
   justify-content: center;
   align-items: center;
   flex: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
+  flex-direction: row;
+`;
+const ModalBtn = styled.TouchableOpacity`
+  background-color: #fdbe00;
+  margin: auto;
+  border-radius: 10px;
+  width: 110px;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+`;
+const ModalBtnText = styled.Text`
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
 `;
 const Details = ({ route, navigation }) => {
   const item = route.params;
@@ -38,7 +53,7 @@ const Details = ({ route, navigation }) => {
   };
   const [modalVisible, setModalVisible] = useState(false);
   const openModal = () => setModalVisible(true);
-  console.log(modalVisible);
+
   return (
     <Wrapper>
       <Container>
@@ -50,21 +65,21 @@ const Details = ({ route, navigation }) => {
       </BtnContainer>
       <Modal transparent={true} visible={modalVisible}>
         <ModalContainer>
-          <TouchableOpacity
+          <ModalBtn
             onPress={() => {
               handleDelete(item.id);
               setModalVisible(false);
             }}
           >
-            <Text>Sure</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
+            <ModalBtnText>Sure</ModalBtnText>
+          </ModalBtn>
+          <ModalBtn
             onPress={() => {
               setModalVisible(false);
             }}
           >
-            <Text>No</Text>
-          </TouchableOpacity>
+            <ModalBtnText>No</ModalBtnText>
+          </ModalBtn>
         </ModalContainer>
       </Modal>
     </Wrapper>
