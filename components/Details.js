@@ -27,11 +27,13 @@ const ModalContainer = styled.View`
   align-items: center;
   flex: 1;
   background-color: rgba(0, 0, 0, 0.8);
+`;
+const ModalBtnContainer = styled.View`
   flex-direction: row;
 `;
 const ModalBtn = styled.TouchableOpacity`
   background-color: #fdbe00;
-  margin: auto;
+  margin: 15px;
   border-radius: 10px;
   width: 110px;
   align-items: center;
@@ -42,6 +44,12 @@ const ModalBtnText = styled.Text`
   color: white;
   font-size: 20px;
   font-weight: 700;
+`;
+const ModalText = styled.Text`
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  margin-bottom: 60px;
 `;
 const Details = ({ route, navigation }) => {
   const item = route.params;
@@ -65,21 +73,24 @@ const Details = ({ route, navigation }) => {
       </BtnContainer>
       <Modal transparent={true} visible={modalVisible}>
         <ModalContainer>
-          <ModalBtn
-            onPress={() => {
-              handleDelete(item.id);
-              setModalVisible(false);
-            }}
-          >
-            <ModalBtnText>Sure</ModalBtnText>
-          </ModalBtn>
-          <ModalBtn
-            onPress={() => {
-              setModalVisible(false);
-            }}
-          >
-            <ModalBtnText>No</ModalBtnText>
-          </ModalBtn>
+          <ModalText>Do you want to delete this note?</ModalText>
+          <ModalBtnContainer>
+            <ModalBtn
+              onPress={() => {
+                handleDelete(item.id);
+                setModalVisible(false);
+              }}
+            >
+              <ModalBtnText>Sure</ModalBtnText>
+            </ModalBtn>
+            <ModalBtn
+              onPress={() => {
+                setModalVisible(false);
+              }}
+            >
+              <ModalBtnText>No</ModalBtnText>
+            </ModalBtn>
+          </ModalBtnContainer>
         </ModalContainer>
       </Modal>
     </Wrapper>
