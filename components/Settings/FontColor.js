@@ -30,7 +30,7 @@ const colors = [
   { name: "navy", hex: "#173F5F" },
   { name: "blue", hex: "#20639B" },
   { name: "green", hex: "#3CAEA3" },
-  { name: "yellow", hex: "#F6D55C" },
+  { name: "yellow", hex: "#fdbe00" },
   { name: "red", hex: "#ED553B" },
 ];
 
@@ -38,13 +38,15 @@ const FontColor = () => {
   const { fontColor, setFontColor } = useContext(Context);
   return (
     <Container>
-      <MainText color={fontColor}>Current font color: {fontColor}</MainText>
+      <MainText color={fontColor.hex}>
+        Current font color: {fontColor.name}
+      </MainText>
       <ColorContainer>
         {colors.map((color) => {
           return (
             <StyledTouchableOpacity
               activeOpacity={0.5}
-              onPress={() => setFontColor(color.name)}
+              onPress={() => setFontColor({ name: color.name, hex: color.hex })}
             >
               <Color color={color.hex}></Color>
             </StyledTouchableOpacity>
