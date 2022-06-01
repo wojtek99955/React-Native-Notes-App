@@ -15,7 +15,7 @@ const Divider = styled.View`
 const Container = styled.View`
   padding: 10px;
 `;
-const links = ["Dark Mode", "Font Size"];
+const links = ["Dark Mode", "Font Size", "Font Color"];
 const Preferences = ({ navigation }) => {
   return (
     <Container>
