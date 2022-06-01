@@ -28,6 +28,7 @@ export const DateText = styled.Text`
 export const NoteText = styled.Text`
   font-size: ${({ fontSize }) => `${fontSize}px`};
   margin-bottom: 22px;
+  color: ${({ fontColor }) => fontColor};
 `;
 
 export const IconContainer = styled.TouchableOpacity`

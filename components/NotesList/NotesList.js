@@ -8,7 +8,7 @@ import NoteListFooter from "./NoteListFooter";
 
 const NoteList = ({ navigation }) => {
   const ctx = useContext(Context);
-  const { notes } = ctx;
+  const { notes, fontColor } = ctx;
   const filteredNotes = notes.filter((note) => {
     return note.text.toLowerCase().includes(ctx.searchNote.toLowerCase());
   });
@@ -45,7 +45,7 @@ const NoteList = ({ navigation }) => {
           }}
           onPressOut={() => handleClose(item.id)}
         >
-          <NoteText fontSize={ctx.fontSize.size}>
+          <NoteText fontColor={fontColor.hex} fontSize={ctx.fontSize.size}>
             {item.text.length > 50 ? `${item.text.slice(0, 50)}...` : item.text}
           </NoteText>
           {item.text.length > 50 ? <ShowMore>More...</ShowMore> : null}
