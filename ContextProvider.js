@@ -6,6 +6,7 @@ function ContextProvider({ children }) {
   const [notes, setNotes] = useState([]);
   const [searchNote, setSearchNote] = useState("");
   const [fontSize, setFontSize] = useState({ name: "medium", size: 25 });
+  const [fontColor, setFontColor] = useState("");
 
   return (
     <Context.Provider
@@ -16,6 +17,8 @@ function ContextProvider({ children }) {
         setSearchNote,
         fontSize,
         setFontSize,
+        fontColor,
+        setFontColor,
       }}
     >
       {children}
