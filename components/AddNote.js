@@ -8,6 +8,7 @@ import {
   ScrollView,
   Keyboard,
   TouchableWithoutFeedback,
+  Alert,
 } from "react-native";
 import { useState, useContext, useRef } from "react";
 import uuid from "react-native-uuid";
@@ -60,7 +61,9 @@ function AddNote() {
         ...ctx.notes,
       ]);
     } else {
-      return ctx.notes;
+      return Alert.alert("Oops!", "You can't add empty note :(", [
+        { text: "I got it" },
+      ]);
     }
     inputRef.current.clear();
     setNoteText("");
