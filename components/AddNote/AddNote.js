@@ -12,37 +12,8 @@ import {
 } from "react-native";
 import { useState, useContext, useRef } from "react";
 import uuid from "react-native-uuid";
-import { Context } from "../ContextProvider";
-
-const Container = styled.View``;
-const Input = styled.TextInput`
-  width: 100%;
-  background-color: white;
-  padding: 15px;
-  font-size: ${({ fontSize }) => `${fontSize}px`};
-  height: 200px;
-`;
-const Title = styled.Text`
-  font-size: 30px;
-  text-align: center;
-  margin: 20px 0;
-`;
-
-const Button = styled.TouchableOpacity`
-  background-color: #fdbe00;
-  width: 150px;
-  height: 60px;
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-top: 50px;
-`;
-const ButtonText = styled.Text`
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
-`;
+import { Context } from "../../ContextProvider";
+import { Container, Input, Title, Button, ButtonText } from "./AddNoteStyles";
 
 function AddNote() {
   const ctx = useContext(Context);
