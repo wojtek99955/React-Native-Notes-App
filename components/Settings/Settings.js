@@ -11,10 +11,13 @@ const Divider = styled.View`
   border-bottom-color: grey;
   border-bottom-width: 1px;
 `;
+const Container = styled.View`
+  padding: 10px;
+`;
 const Settings = ({ navigation }) => {
   const links = ["Preferences", "Privacy Policy", "About"];
   return (
-    <>
+    <Container>
       {links.map((link) => {
         return (
           <View key={link}>
@@ -25,7 +28,7 @@ const Settings = ({ navigation }) => {
           </View>
         );
       })}
-    </>
+    </Container>
   );
 };
 
