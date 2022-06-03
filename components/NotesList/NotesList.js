@@ -1,4 +1,11 @@
-import { View, FlatList, Dimensions, Vibration } from "react-native";
+import {
+  View,
+  FlatList,
+  Dimensions,
+  Vibration,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 import { useContext } from "react";
 import { Context } from "../../ContextProvider";
 import SearchBar from "../SearchBar/SearchBar";
@@ -56,16 +63,18 @@ const NoteList = ({ navigation }) => {
   };
 
   return (
-    <View>
-      <SearchBar />
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <>
+        <SearchBar />
 
-      <FlatList
-        numColumns={2}
-        data={filteredNotes}
-        renderItem={Note}
-        ListFooterComponent={<NoteListFooter navigation={navigation} />}
-      />
-    </View>
+        <FlatList
+          numColumns={2}
+          data={filteredNotes}
+          renderItem={Note}
+          ListFooterComponent={<NoteListFooter navigation={navigation} />}
+        />
+      </>
+    </TouchableWithoutFeedback>
   );
 };
 
