@@ -20,6 +20,7 @@ export default function App() {
           screenOptions={{
             tabBarActiveTintColor: "#fdbe00",
             tabBarInactiveTintColor: "gray",
+            tabBarHideOnKeyboard: true,
             tabBarLabelStyle: {
               fontSize: 15,
             },
