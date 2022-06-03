@@ -47,6 +47,7 @@ const FontColor = () => {
             <StyledTouchableOpacity
               activeOpacity={0.5}
               onPress={() => setFontColor({ name: color.name, hex: color.hex })}
+              key={color.name}
             >
               <Color color={color.hex}></Color>
             </StyledTouchableOpacity>
