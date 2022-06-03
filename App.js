@@ -32,7 +32,7 @@ export default function App() {
               tabBarIcon: ({ focused }) => (
                 <Ionicons
                   name={focused ? "add-circle" : "add-circle-outline"}
-                  color={focused ? "#fdbe00" : null}
+                  color={focused ? "#fdbe00" : "gray"}
                   size={28}
                 />
               ),
@@ -45,7 +45,7 @@ export default function App() {
               tabBarIcon: ({ focused }) => (
                 <Ionicons
                   name={focused ? "document" : "document-outline"}
-                  color={focused ? "#fdbe00" : null}
+                  color={focused ? "#fdbe00" : "gray"}
                   size={28}
                 />
               ),
@@ -59,7 +59,7 @@ export default function App() {
               tabBarIcon: ({ focused }) => (
                 <Ionicons
                   name={focused ? "settings" : "settings-outline"}
-                  color={focused ? "#fdbe00" : null}
+                  color={focused ? "#fdbe00" : "gray"}
                   size={28}
                 />
               ),
