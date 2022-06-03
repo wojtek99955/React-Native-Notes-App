@@ -26,6 +26,22 @@ const StyledTouchableOpacity = styled.TouchableOpacity`
   margin: auto;
 `;
 
+const ResetButton = styled.TouchableOpacity`
+  background-color: #fdbe00;
+  width: 120px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 12px;
+  margin-top: 120px;
+`;
+const BtnText = styled.Text`
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+`;
+
 const colors = [
   { name: "navy", hex: "#173F5F" },
   { name: "blue", hex: "#20639B" },
@@ -54,6 +70,11 @@ const FontColor = () => {
           );
         })}
       </ColorContainer>
+      <ResetButton
+        onPress={() => setFontColor({ name: "black", hex: "#000000" })}
+      >
+        <BtnText>Reset</BtnText>
+      </ResetButton>
     </Container>
   );
 };
