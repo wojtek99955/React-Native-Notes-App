@@ -48,4 +48,5 @@ export const ModalText = styled.Text`
 export const BtnsWrapper = styled.View`
   flex-direction: row;
   justify-content: flex-end;
+  margin-right: 10px;
 `;
