@@ -14,7 +14,9 @@ export const Date = styled.Text`
   margin-top: 40px;
 `;
 
-export const BtnContainer = styled.TouchableOpacity``;
+export const BtnContainer = styled.TouchableOpacity`
+  margin-left: 10px;
+`;
 
 export const BtnsWrapper = styled.View`
   flex-direction: row;

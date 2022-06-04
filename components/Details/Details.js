@@ -26,10 +26,10 @@ const Details = ({ route, navigation }) => {
       </Container>
       <BtnsWrapper>
         <BtnContainer onPress={openModal}>
-          <Ionicons name="close-circle" size={60} color="red" />
+          <Ionicons name="close-circle" size={50} color="red" />
         </BtnContainer>
         <BtnContainer>
-          <Ionicons name="create-outline" size={60} color="grey" />
+          <Ionicons name="create-outline" size={50} color="grey" />
         </BtnContainer>
       </BtnsWrapper>
       <DeleteModal
