@@ -23,6 +23,9 @@ const Button = styled.TouchableOpacity`
 const BtnText = styled.Text`
   color: white;
 `;
+const DemoText = styled.Text`
+  font-size: ${({ fontSize }) => fontSize.size};
+`;
 const FontSize = () => {
   const { fontSize, setFontSize } = useContext(Context);
   const sizes = [
@@ -32,7 +35,9 @@ const FontSize = () => {
   ];
   return (
     <View>
-      <StyledText>Current Size: {fontSize.name} </StyledText>
+      <StyledText>
+        Current Size: <DemoText fontSize={fontSize}>{fontSize.name}</DemoText>
+      </StyledText>
       <BtnsContainer>
         {sizes.map((size) => {
           return (
