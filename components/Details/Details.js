@@ -1,30 +1,20 @@
-import { Modal } from "react-native";
 import { Context } from "../../ContextProvider";
 import { useContext } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState } from "react";
+import DeleteModal from "./DeleteModal";
 import {
   Wrapper,
   Container,
   NoteText,
   Date,
   BtnContainer,
-  ModalContainer,
-  ModalBtnContainer,
-  ModalBtn,
-  ModalBtnText,
-  ModalText,
   BtnsWrapper,
 } from "./DetailsStyles";
 
 const Details = ({ route, navigation }) => {
   const item = route.params;
-  const { fontSize, notes, setNotes } = useContext(Context);
-  const handleDelete = (id) => {
-    const newList = notes.filter((note) => note.id !== id);
-    setNotes(newList);
-    navigation.goBack();
-  };
+  const { fontSize } = useContext(Context);
   const [modalVisible, setModalVisible] = useState(false);
   const openModal = () => setModalVisible(true);
 
@@ -42,28 +32,12 @@ const Details = ({ route, navigation }) => {
           <Ionicons name="create-outline" size={60} color="grey" />
         </BtnContainer>
       </BtnsWrapper>
-      <Modal transparent={true} visible={modalVisible}>
-        <ModalContainer>
-          <ModalText>Do you want to delete this note?</ModalText>
-          <ModalBtnContainer>
-            <ModalBtn
-              onPress={() => {
-                handleDelete(item.id);
-                setModalVisible(false);
-              }}
-            >
-              <ModalBtnText>Yes</ModalBtnText>
-            </ModalBtn>
-            <ModalBtn
-              onPress={() => {
-                setModalVisible(false);
-              }}
-            >
-              <ModalBtnText>No</ModalBtnText>
-            </ModalBtn>
-          </ModalBtnContainer>
-        </ModalContainer>
-      </Modal>
+      <DeleteModal
+        item={item}
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        navigation={navigation}
+      />
     </Wrapper>
   );
 };
