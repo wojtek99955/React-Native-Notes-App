@@ -24,7 +24,7 @@ const BtnText = styled.Text`
   color: white;
 `;
 const DemoText = styled.Text`
-  font-size: ${({ fontSize }) => fontSize.size};
+  font-size: ${({ fontSize }) => fontSize.size}px;
 `;
 const FontSize = () => {
   const { fontSize, setFontSize } = useContext(Context);
