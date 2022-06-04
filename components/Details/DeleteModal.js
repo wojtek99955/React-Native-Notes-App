@@ -1,5 +1,5 @@
 import { View, Text, Modal } from "react-native";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { Context } from "../../ContextProvider";
 import {
   ModalContainer,
@@ -11,6 +11,7 @@ import {
 
 const DeleteModal = ({ item, navigation, modalVisible, setModalVisible }) => {
   const { notes, setNotes } = useContext(Context);
+
   const handleDelete = (id) => {
     const newList = notes.filter((note) => note.id !== id);
     setNotes(newList);
