@@ -14,6 +14,7 @@ import {
   ModalBtn,
   ModalBtnText,
   ModalText,
+  BtnsWrapper,
 } from "./DetailsStyles";
 
 const Details = ({ route, navigation }) => {
@@ -33,12 +34,14 @@ const Details = ({ route, navigation }) => {
         <NoteText fontSize={fontSize.size}>{item.text}</NoteText>
         <Date>{item.date}</Date>
       </Container>
-      <BtnContainer onPress={openModal}>
-        <Ionicons name="close-circle" size={60} color="red" />
-      </BtnContainer>
-      <BtnContainer>
-        <Ionicons name="create-outline" size={60} color="grey" />
-      </BtnContainer>
+      <BtnsWrapper>
+        <BtnContainer onPress={openModal}>
+          <Ionicons name="close-circle" size={60} color="red" />
+        </BtnContainer>
+        <BtnContainer>
+          <Ionicons name="create-outline" size={60} color="grey" />
+        </BtnContainer>
+      </BtnsWrapper>
       <Modal transparent={true} visible={modalVisible}>
         <ModalContainer>
           <ModalText>Do you want to delete this note?</ModalText>

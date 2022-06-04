@@ -14,10 +14,7 @@ export const Date = styled.Text`
   margin-top: 40px;
 `;
 
-export const BtnContainer = styled.TouchableOpacity`
-  align-items: flex-end;
-  padding: 0 40px;
-`;
+export const BtnContainer = styled.TouchableOpacity``;
 export const ModalContainer = styled.View`
   justify-content: center;
   align-items: center;
@@ -46,4 +43,9 @@ export const ModalText = styled.Text`
   text-align: center;
   color: white;
   margin-bottom: 60px;
+`;
+
+export const BtnsWrapper = styled.View`
+  flex-direction: row;
+  justify-content: flex-end;
 `;
