@@ -36,6 +36,9 @@ const Details = ({ route, navigation }) => {
       <BtnContainer onPress={openModal}>
         <Ionicons name="close-circle" size={60} color="red" />
       </BtnContainer>
+      <BtnContainer>
+        <Ionicons name="create-outline" size={60} color="grey" />
+      </BtnContainer>
       <Modal transparent={true} visible={modalVisible}>
         <ModalContainer>
           <ModalText>Do you want to delete this note?</ModalText>
