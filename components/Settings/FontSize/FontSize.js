@@ -1,13 +1,13 @@
 import { View } from "react-native";
 import { useContext } from "react";
-import { Context } from "../../ContextProvider";
+import { Context } from "../../../ContextProvider";
 import {
   StyledText,
   BtnsContainer,
   BtnText,
   Button,
   DemoText,
-} from "./FontSize/FontSizeStyles";
+} from "./FontSizeStyles";
 
 const FontSize = () => {
   const { fontSize, setFontSize } = useContext(Context);
