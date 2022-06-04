@@ -1,46 +1,16 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { useContext } from "react";
-import { Context } from "../../ContextProvider";
+import { Context } from "../../../ContextProvider";
 import styled from "styled-components";
-
-const Container = styled.View``;
-const MainText = styled.Text`
-  font-size: 25px;
-  margin: auto;
-  padding-top: 20px;
-  color: ${({ color }) => color};
-`;
-
-const ColorContainer = styled.View`
-  flex-direction: row;
-  padding: 40px;
-`;
-const Color = styled.View`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: ${({ color }) => color};
-`;
-
-const StyledTouchableOpacity = styled.TouchableOpacity`
-  margin: auto;
-`;
-
-const ResetButton = styled.TouchableOpacity`
-  background-color: #fdbe00;
-  width: 120px;
-  border-radius: 10px;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  padding: 12px;
-  margin-top: 120px;
-`;
-const BtnText = styled.Text`
-  font-size: 20px;
-  color: white;
-  font-weight: 600;
-`;
+import {
+  Container,
+  ColorContainer,
+  Color,
+  StyledTouchableOpacity,
+  ResetButton,
+  BtnText,
+  MainText,
+} from "./FontColorStyles";
 
 const colors = [
   { name: "navy", hex: "#173F5F" },
