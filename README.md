@@ -9,6 +9,11 @@ notes app
 - react-native
 - styled-components
 
+## Features
+
+- add note
+- change font size
+
 ## Installation
 
 Download or clone the repository
