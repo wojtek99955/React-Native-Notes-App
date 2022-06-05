@@ -13,6 +13,7 @@ notes app
 
 - add note
 - change font size
+- change font color
 
 ## Installation
 
