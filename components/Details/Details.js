@@ -1,12 +1,11 @@
 import { Context } from "../../ContextProvider";
 import { useContext } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Button } from "react-native";
 import { useState } from "react";
 import DeleteModal from "./DeleteModal";
 import {
   Wrapper,
-  Container,
+  NoteContainer,
   NoteText,
   Date,
   BtnContainer,
@@ -14,6 +13,8 @@ import {
   StyledInput,
   SaveBtn,
   SaveBtnText,
+  Container,
+  ContentContainer,
 } from "./DetailsStyles";
 
 const Details = ({ route, navigation }) => {
@@ -44,46 +45,50 @@ const Details = ({ route, navigation }) => {
 
   return (
     <Wrapper>
-      <Container onPress={openEdit}>
-        {edit ? (
-          <>
-            <StyledInput
-              defaultValue={item.text}
-              fontSize={fontSize.size}
-              onChangeText={setEditedValue}
-            />
-            <Date>{item.date}</Date>
-          </>
-        ) : (
-          <>
-            <NoteText fontSize={fontSize.size}>{item.text}</NoteText>
-            <Date>{item.date}</Date>
-          </>
-        )}
+      <Container onPress={() => setEdit(false)}>
+        <ContentContainer>
+          <NoteContainer onPress={openEdit}>
+            {edit ? (
+              <>
+                <StyledInput
+                  defaultValue={item.text}
+                  fontSize={fontSize.size}
+                  onChangeText={setEditedValue}
+                />
+                <Date>{item.date}</Date>
+              </>
+            ) : (
+              <>
+                <NoteText fontSize={fontSize.size}>{item.text}</NoteText>
+                <Date>{item.date}</Date>
+              </>
+            )}
+          </NoteContainer>
+          <BtnsWrapper>
+            {edit && (
+              <SaveBtn
+                onPress={() => {
+                  handleSave(item.id);
+                }}
+              >
+                <SaveBtnText>Save</SaveBtnText>
+              </SaveBtn>
+            )}
+            <BtnContainer onPress={openModal}>
+              <Ionicons name="close-circle" size={50} color="red" />
+            </BtnContainer>
+            <BtnContainer onPress={openEdit}>
+              <Ionicons name="create-outline" size={50} color="grey" />
+            </BtnContainer>
+          </BtnsWrapper>
+          <DeleteModal
+            item={item}
+            modalVisible={modalVisible}
+            setModalVisible={setModalVisible}
+            navigation={navigation}
+          />
+        </ContentContainer>
       </Container>
-      <BtnsWrapper>
-        {edit && (
-          <SaveBtn
-            onPress={() => {
-              handleSave(item.id);
-            }}
-          >
-            <SaveBtnText>Save</SaveBtnText>
-          </SaveBtn>
-        )}
-        <BtnContainer onPress={openModal}>
-          <Ionicons name="close-circle" size={50} color="red" />
-        </BtnContainer>
-        <BtnContainer onPress={openEdit}>
-          <Ionicons name="create-outline" size={50} color="grey" />
-        </BtnContainer>
-      </BtnsWrapper>
-      <DeleteModal
-        item={item}
-        modalVisible={modalVisible}
-        setModalVisible={setModalVisible}
-        navigation={navigation}
-      />
     </Wrapper>
   );
 };

@@ -1,7 +1,16 @@
-import { View, Text, TouchableOpacity, TextInput, TouchableWithoutFeedback } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  TouchableWithoutFeedback,
+  Pressable,
+} from "react-native";
 import styled from "styled-components";
 export const Wrapper = styled.ScrollView``;
-export const Container = styled.View`
+export const Container = styled.TouchableWithoutFeedback``;
+export const ContentContainer = styled.View``;
+export const NoteContainer = styled.Pressable`
   background-color: white;
   margin: 30px 10px;
   border-radius: 10px;
@@ -27,6 +36,7 @@ export const BtnsWrapper = styled.View`
 
 export const StyledInput = styled.TextInput`
   font-size: ${({ fontSize }) => `${fontSize}px`};
+  flex: 1;
 `;
 
 export const SaveBtn = styled.TouchableOpacity`
