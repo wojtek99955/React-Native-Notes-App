@@ -28,6 +28,7 @@ function AddNote() {
           id: uuid.v4(),
           date: date.toLocaleDateString(),
           modalOpen: false,
+          openEdditing: false,
         },
         ...ctx.notes,
       ]);
