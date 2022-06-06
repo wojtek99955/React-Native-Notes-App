@@ -58,6 +58,8 @@ const Details = ({ route, navigation }) => {
             <Date>{item.date}</Date>
           </>
         )}
+      </Container>
+      <BtnsWrapper>
         {edit && (
           <Button
             onPress={() => {
@@ -66,8 +68,6 @@ const Details = ({ route, navigation }) => {
             title="save"
           />
         )}
-      </Container>
-      <BtnsWrapper>
         <BtnContainer onPress={openModal}>
           <Ionicons name="close-circle" size={50} color="red" />
         </BtnContainer>

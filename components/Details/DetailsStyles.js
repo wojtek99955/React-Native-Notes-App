@@ -22,6 +22,7 @@ export const BtnsWrapper = styled.View`
   flex-direction: row;
   justify-content: flex-end;
   margin-right: 10px;
+  align-items: center;
 `;
 
 export const StyledInput = styled.TextInput`
