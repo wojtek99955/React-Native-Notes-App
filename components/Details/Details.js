@@ -3,7 +3,6 @@ import { useContext } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState } from "react";
 import DeleteModal from "./DeleteModal";
-import { TextInput, Pressable } from "react-native";
 import {
   Wrapper,
   Container,
@@ -11,6 +10,7 @@ import {
   Date,
   BtnContainer,
   BtnsWrapper,
+  StyledInput,
 } from "./DetailsStyles";
 
 const Details = ({ route, navigation }) => {
@@ -29,7 +29,7 @@ const Details = ({ route, navigation }) => {
       <Container>
         {edit ? (
           <>
-            <TextInput defaultValue={item.text} />
+            <StyledInput defaultValue={item.text} fontSize={fontSize.size} />
             <Date>{item.date}</Date>
           </>
         ) : (

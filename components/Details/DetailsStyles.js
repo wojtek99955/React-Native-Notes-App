@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import styled from "styled-components";
 export const Wrapper = styled.ScrollView``;
 export const Container = styled.View`
@@ -22,4 +22,8 @@ export const BtnsWrapper = styled.View`
   flex-direction: row;
   justify-content: flex-end;
   margin-right: 10px;
+`;
+
+export const StyledInput = styled.TextInput`
+  font-size: ${({ fontSize }) => `${fontSize}px`};
 `;
