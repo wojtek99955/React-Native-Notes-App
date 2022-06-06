@@ -12,6 +12,8 @@ import {
   BtnContainer,
   BtnsWrapper,
   StyledInput,
+  SaveBtn,
+  SaveBtnText,
 } from "./DetailsStyles";
 
 const Details = ({ route, navigation }) => {
@@ -61,12 +63,13 @@ const Details = ({ route, navigation }) => {
       </Container>
       <BtnsWrapper>
         {edit && (
-          <Button
+          <SaveBtn
             onPress={() => {
               handleSave(item.id);
             }}
-            title="save"
-          />
+          >
+            <SaveBtnText>Save</SaveBtnText>
+          </SaveBtn>
         )}
         <BtnContainer onPress={openModal}>
           <Ionicons name="close-circle" size={50} color="red" />

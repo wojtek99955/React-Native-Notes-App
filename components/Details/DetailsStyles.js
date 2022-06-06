@@ -28,3 +28,10 @@ export const BtnsWrapper = styled.View`
 export const StyledInput = styled.TextInput`
   font-size: ${({ fontSize }) => `${fontSize}px`};
 `;
+
+export const SaveBtn = styled.TouchableOpacity`
+  background-color: #fdbe00;
+  padding: 10px 20px;
+  border-radius: 10px;
+`;
+export const SaveBtnText = styled.Text``;
