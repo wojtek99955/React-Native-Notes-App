@@ -1,6 +1,7 @@
 import { Context } from "../../ContextProvider";
 import { useContext } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Button } from "react-native";
 import { useState } from "react";
 import DeleteModal from "./DeleteModal";
 import {
@@ -19,9 +20,24 @@ const Details = ({ route, navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const openModal = () => setModalVisible(true);
   const { notes, setNotes } = useContext(Context);
+  const [editedValue, setEditedValue] = useState("");
   const [edit, setEdit] = useState(false);
   const openEdit = () => {
     setEdit((prev) => !prev);
+  };
+  console.log(editedValue);
+  const handleSave = (id) => {
+    const elementId = notes.findIndex((el) => el.id === id);
+    const newArray = [...notes];
+    newArray[elementId] = {
+      ...newArray[elementId],
+      text: editedValue,
+    };
+    navigation.setParams({
+      text: editedValue,
+    });
+    setEdit(false);
+    setNotes(newArray);
   };
 
   return (
@@ -29,7 +45,11 @@ const Details = ({ route, navigation }) => {
       <Container>
         {edit ? (
           <>
-            <StyledInput defaultValue={item.text} fontSize={fontSize.size} />
+            <StyledInput
+              defaultValue={item.text}
+              fontSize={fontSize.size}
+              onChangeText={setEditedValue}
+            />
             <Date>{item.date}</Date>
           </>
         ) : (
@@ -37,6 +57,14 @@ const Details = ({ route, navigation }) => {
             <NoteText fontSize={fontSize.size}>{item.text}</NoteText>
             <Date>{item.date}</Date>
           </>
+        )}
+        {edit && (
+          <Button
+            onPress={() => {
+              handleSave(item.id);
+            }}
+            title="save"
+          />
         )}
       </Container>
       <BtnsWrapper>
