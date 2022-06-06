@@ -47,7 +47,7 @@ const Details = ({ route, navigation }) => {
     <Wrapper>
       <Container onPress={() => setEdit(false)}>
         <ContentContainer>
-          <NoteContainer onPress={openEdit}>
+          <NoteContainer onPress={() => setEdit(true)}>
             {edit ? (
               <>
                 <StyledInput
