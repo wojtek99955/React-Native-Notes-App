@@ -54,6 +54,7 @@ const Details = ({ route, navigation }) => {
                   defaultValue={item.text}
                   fontSize={fontSize.size}
                   onChangeText={setEditedValue}
+                  multiline
                 />
                 <Date>{item.date}</Date>
               </>
