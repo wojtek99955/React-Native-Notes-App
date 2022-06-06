@@ -36,7 +36,6 @@ export const BtnsWrapper = styled.View`
 
 export const StyledInput = styled.TextInput`
   font-size: ${({ fontSize }) => `${fontSize}px`};
-  flex: 1;
 `;
 
 export const SaveBtn = styled.TouchableOpacity`
