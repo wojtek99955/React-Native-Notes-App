@@ -21,7 +21,7 @@ const Details = ({ route, navigation }) => {
   const { notes, setNotes } = useContext(Context);
   const [edit, setEdit] = useState(false);
   const openEdit = () => {
-    setEdit(true);
+    setEdit((prev) => !prev);
   };
 
   return (
@@ -39,8 +39,6 @@ const Details = ({ route, navigation }) => {
           </>
         )}
       </Container>
-      <Date>{edit + "cos"}</Date>
-      <Date>{item.openEdditing.toString()}</Date>
       <BtnsWrapper>
         <BtnContainer onPress={openModal}>
           <Ionicons name="close-circle" size={50} color="red" />
