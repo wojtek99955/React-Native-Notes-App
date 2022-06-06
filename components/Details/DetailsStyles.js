@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import { View, Text, TouchableOpacity, TextInput, TouchableWithoutFeedback } from "react-native";
 import styled from "styled-components";
 export const Wrapper = styled.ScrollView``;
 export const Container = styled.View`

@@ -44,7 +44,7 @@ const Details = ({ route, navigation }) => {
 
   return (
     <Wrapper>
-      <Container>
+      <Container onPress={openEdit}>
         {edit ? (
           <>
             <StyledInput
@@ -74,11 +74,7 @@ const Details = ({ route, navigation }) => {
         <BtnContainer onPress={openModal}>
           <Ionicons name="close-circle" size={50} color="red" />
         </BtnContainer>
-        <BtnContainer
-          onPress={() => {
-            openEdit();
-          }}
-        >
+        <BtnContainer onPress={openEdit}>
           <Ionicons name="create-outline" size={50} color="grey" />
         </BtnContainer>
       </BtnsWrapper>
