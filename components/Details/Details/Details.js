@@ -2,7 +2,7 @@ import { Context } from "../../../ContextProvider";
 import { useContext } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState } from "react";
-import DeleteModal from "./DeleteModal";
+import DeleteModal from "../DeleteModal";
 import { Keyboard } from "react-native";
 import {
   Wrapper,
@@ -16,7 +16,7 @@ import {
   SaveBtnText,
   Container,
   ContentContainer,
-} from "../DetailsStyles";
+} from "./DetailsStyles";
 
 const Details = ({ route, navigation }) => {
   const item = route.params;
