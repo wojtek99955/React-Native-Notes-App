@@ -55,6 +55,7 @@ const Details = ({ route, navigation }) => {
                   fontSize={fontSize.size}
                   onChangeText={setEditedValue}
                   multiline
+                  autoFocus={true}
                 />
                 <Date>{item.date}</Date>
               </>
