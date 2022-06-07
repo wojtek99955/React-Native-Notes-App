@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Platform } from "react-native";
 import ContextProvider from "./ContextProvider";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
@@ -23,6 +23,10 @@ export default function App() {
             tabBarHideOnKeyboard: true,
             tabBarLabelStyle: {
               fontSize: 15,
+            },
+            tabBarStyle: {
+              paddingVertical: 5,
+              height: Platform.OS === "ios" ? 85 : 55,
             },
           }}
         >
