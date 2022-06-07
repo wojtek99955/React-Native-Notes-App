@@ -3,6 +3,7 @@ import { useContext } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState } from "react";
 import DeleteModal from "./DeleteModal";
+import { Keyboard } from "react-native";
 import {
   Wrapper,
   NoteContainer,
@@ -41,11 +42,17 @@ const Details = ({ route, navigation }) => {
     });
     setEdit(false);
     setNotes(newArray);
+    Keyboard.dismiss();
   };
 
   return (
     <Wrapper>
-      <Container onPress={() => setEdit(false)}>
+      <Container
+        onPress={() => {
+          setEdit(false);
+          Keyboard.dismiss();
+        }}
+      >
         <ContentContainer>
           <NoteContainer onPress={() => setEdit(true)}>
             {edit ? (
