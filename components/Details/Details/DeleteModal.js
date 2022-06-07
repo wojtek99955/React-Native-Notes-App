@@ -1,6 +1,6 @@
 import { View, Text, Modal } from "react-native";
 import { useContext } from "react";
-import { Context } from "../../ContextProvider";
+import { Context } from "../../../ContextProvider";
 import {
   ModalContainer,
   ModalText,
