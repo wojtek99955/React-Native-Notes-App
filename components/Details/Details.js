@@ -20,7 +20,7 @@ import {
 
 const Details = ({ route, navigation }) => {
   const item = route.params;
-  const { fontSize } = useContext(Context);
+  const { fontSize, fontColor } = useContext(Context);
   const [modalVisible, setModalVisible] = useState(false);
   const openModal = () => setModalVisible(true);
   const { notes, setNotes } = useContext(Context);
@@ -63,12 +63,15 @@ const Details = ({ route, navigation }) => {
                   onChangeText={setEditedValue}
                   multiline
                   autoFocus={true}
+                  fontColor={fontColor.hex}
                 />
                 <Date>{item.date}</Date>
               </>
             ) : (
               <>
-                <NoteText fontSize={fontSize.size}>{item.text}</NoteText>
+                <NoteText fontSize={fontSize.size} fontColor={fontColor.hex}>
+                  {item.text}
+                </NoteText>
                 <Date>{item.date}</Date>
               </>
             )}
