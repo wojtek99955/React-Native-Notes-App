@@ -15,6 +15,7 @@ notes app
 - change font size
 - change font color
 - delete note
+- edit note
 
 ## Installation
 
