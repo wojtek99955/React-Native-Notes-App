@@ -1,13 +1,13 @@
 import { View, Text, Modal } from "react-native";
 import { useContext } from "react";
-import { Context } from "../../ContextProvider";
+import { Context } from "../../../ContextProvider";
 import {
   ModalContainer,
   ModalText,
   ModalBtnContainer,
   ModalBtn,
   ModalBtnText,
-} from "./DeleteModal/DeleteModalStyles";
+} from "./DeleteModalStyles";
 
 const DeleteModal = ({ item, navigation, modalVisible, setModalVisible }) => {
   const { notes, setNotes } = useContext(Context);

@@ -2,7 +2,7 @@ import { Context } from "../../../ContextProvider";
 import { useContext } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState } from "react";
-import DeleteModal from "../DeleteModal";
+import DeleteModal from "../DeleteModal/DeleteModal";
 import { Keyboard } from "react-native";
 import {
   Wrapper,
