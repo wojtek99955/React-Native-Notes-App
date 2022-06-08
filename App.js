@@ -31,7 +31,7 @@ export default function App() {
           }}
         >
           <Tabs.Screen
-            name="Add Note"
+            name="Create Note"
             component={AddNote}
             options={{
               tabBarIcon: ({ focused }) => (
