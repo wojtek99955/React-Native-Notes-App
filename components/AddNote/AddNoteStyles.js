@@ -11,6 +11,7 @@ export const Input = styled.TextInput`
   padding: 15px;
   font-size: ${({ fontSize }) => `${fontSize}px`};
   height: 200px;
+  color: ${({ theme }) => (theme === "dark" ? "white" : "black")};
 `;
 export const Title = styled.Text`
   font-size: 30px;
