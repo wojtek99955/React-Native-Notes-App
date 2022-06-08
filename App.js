@@ -7,8 +7,13 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import NoteListScreen from "./screens/NoteListScreen";
 import "react-native-gesture-handler";
 import SettingsScreens from "./screens/SettingsScreens";
+import { useContext } from "react";
+import { Context } from "./ContextProvider";
+import { Appearance } from "react-native";
+const theme = Appearance.getColorScheme();
 
 export default function App() {
+  const ctx = useContext(Context);
   const Tabs = createBottomTabNavigator();
   return (
     <ContextProvider>
@@ -18,12 +23,17 @@ export default function App() {
             tabBarActiveTintColor: "#fdbe00",
             tabBarInactiveTintColor: "gray",
             tabBarHideOnKeyboard: true,
+            headerStyle: {
+              backgroundColor: theme === "dark" ? "black" : "white",
+            },
+            headerTintColor: theme === "dark" ? "white" : "black",
             tabBarLabelStyle: {
               fontSize: 15,
             },
             tabBarStyle: {
               paddingVertical: 5,
               height: Platform.OS === "ios" ? 85 : 55,
+              backgroundColor: theme === "dark" ? "black" : "white",
             },
           }}
         >
