@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import React from "react";
+import { useContext } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Settings from "../components/Settings/Settings";
 import Preferences from "../components/Settings/Preferences/Preferences";
@@ -8,11 +8,20 @@ import DarkMode from "../components/Settings/DarkMode";
 import About from "../components/Settings/About";
 import FontSize from "../components/Settings/FontSize/FontSize";
 import FontColor from "../components/Settings/FontColor/FontColor";
+import { Context } from "../ContextProvider";
 
 const SettingsScreens = () => {
+  const { theme } = useContext(Context);
   const Stack = createStackNavigator();
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: theme === "dark" ? "#242424" : "white",
+        },
+        headerTintColor: theme === "dark" ? "white" : "black",
+      }}
+    >
       <Stack.Screen
         name="Settings Main"
         options={{ title: "Settings" }}
