@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Settings from "../components/Settings/Settings";
-import Preferences from "../components/Settings/Preferences";
+import Preferences from "../components/Settings/Preferences/Preferences";
 import PrivacyPolicy from "../components/Settings/PrivacyPolicy";
 import DarkMode from "../components/Settings/DarkMode";
 import About from "../components/Settings/About";
