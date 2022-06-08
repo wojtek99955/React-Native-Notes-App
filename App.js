@@ -27,7 +27,7 @@ export default function App() {
               tabBarInactiveTintColor: "gray",
               tabBarHideOnKeyboard: true,
               headerStyle: {
-                backgroundColor: theme === "dark" ? "#333333" : "white",
+                backgroundColor: theme === "dark" ? "#242424" : "white",
               },
               headerTintColor: theme === "dark" ? "white" : "black",
 
