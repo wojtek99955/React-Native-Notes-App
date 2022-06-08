@@ -1,15 +1,4 @@
-import styled from "styled-components";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  FlatList,
-  ScrollView,
-  Keyboard,
-  TouchableWithoutFeedback,
-  Alert,
-} from "react-native";
+import { Keyboard, TouchableWithoutFeedback, Alert } from "react-native";
 import { useState, useContext, useRef } from "react";
 import uuid from "react-native-uuid";
 import { Context } from "../../ContextProvider";
