@@ -21,10 +21,10 @@ const colors = [
 ];
 
 const FontColor = () => {
-  const { fontColor, setFontColor } = useContext(Context);
+  const { fontColor, setFontColor, theme } = useContext(Context);
   return (
-    <Container>
-      <MainText color={fontColor.hex}>
+    <Container theme={theme}>
+      <MainText color={fontColor.hex} theme={theme}>
         Current font color: {fontColor.name}
       </MainText>
       <ColorContainer>
