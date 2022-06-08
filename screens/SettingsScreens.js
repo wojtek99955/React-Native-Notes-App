@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import { useContext } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Settings from "../components/Settings/Settings";
