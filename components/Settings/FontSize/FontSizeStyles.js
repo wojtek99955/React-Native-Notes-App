@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const StyledText = styled.Text`
   font-size: 25px;
   padding: 10px;
+  color: ${({ theme }) => (theme === "dark" ? "white" : "black")};
 `;
 export const BtnsContainer = styled.View`
   padding: 40px 0;
@@ -23,4 +24,9 @@ export const BtnText = styled.Text`
 `;
 export const DemoText = styled.Text`
   font-size: ${({ fontSize }) => fontSize.size}px;
+`;
+
+export const Wrapper = styled.View`
+  flex: 1;
+  background-color: ${({ theme }) => (theme === "dark" ? "black" : "white")};
 `;

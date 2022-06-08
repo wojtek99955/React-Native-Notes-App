@@ -7,18 +7,19 @@ import {
   BtnText,
   Button,
   DemoText,
+  Wrapper,
 } from "./FontSizeStyles";
 
 const FontSize = () => {
-  const { fontSize, setFontSize } = useContext(Context);
+  const { fontSize, setFontSize, theme } = useContext(Context);
   const sizes = [
     { name: "Small", size: 15 },
     { name: "Medium", size: 22 },
     { name: "Large", size: 30 },
   ];
   return (
-    <View>
-      <StyledText>
+    <Wrapper theme={theme}>
+      <StyledText theme={theme}>
         Current Size: <DemoText fontSize={fontSize}>{fontSize.name}</DemoText>
       </StyledText>
       <BtnsContainer>
@@ -30,7 +31,7 @@ const FontSize = () => {
           );
         })}
       </BtnsContainer>
-    </View>
+    </Wrapper>
   );
 };
 
