@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { Appearance } from "react-native";
 
 export const Context = createContext();
 
@@ -7,6 +8,7 @@ function ContextProvider({ children }) {
   const [searchNote, setSearchNote] = useState("");
   const [fontSize, setFontSize] = useState({ name: "medium", size: 25 });
   const [fontColor, setFontColor] = useState({ name: "black", hex: "#000000" });
+  const theme = Appearance.getColorScheme();
 
   return (
     <Context.Provider
@@ -19,6 +21,7 @@ function ContextProvider({ children }) {
         setFontSize,
         fontColor,
         setFontColor,
+        theme,
       }}
     >
       {children}
