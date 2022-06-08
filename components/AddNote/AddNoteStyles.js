@@ -16,7 +16,8 @@ export const Title = styled.Text`
 `;
 
 export const Button = styled.TouchableOpacity`
-  background-color: #fdbe00;
+  background-color: ${({ theme }) =>
+    theme === "dark" ? "#d5a000" : "#fdbe00"};
   width: 150px;
   height: 60px;
   border-radius: 10px;

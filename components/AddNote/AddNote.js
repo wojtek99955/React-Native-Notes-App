@@ -40,7 +40,6 @@ function AddNote() {
     setNoteText("");
     Keyboard.dismiss();
   };
-
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <Container>
@@ -54,7 +53,7 @@ function AddNote() {
           ref={inputRef}
           fontSize={ctx.fontSize.size}
         />
-        <Button onPress={handleSaveNote}>
+        <Button onPress={handleSaveNote} theme={ctx.theme}>
           <ButtonText>Add Note</ButtonText>
         </Button>
       </Container>
