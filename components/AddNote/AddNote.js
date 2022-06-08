@@ -31,7 +31,7 @@ function AddNote() {
   };
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <Container>
+      <Container theme={ctx.theme}>
         <Title>Create Your Note!</Title>
         <Input
           placeholder="add note"
@@ -41,6 +41,8 @@ function AddNote() {
           onChangeText={(text) => setNoteText(text)}
           ref={inputRef}
           fontSize={ctx.fontSize.size}
+          theme={ctx.theme}
+          placeholderTextColor={ctx.theme === "dark" ? "white" : "black"}
         />
         <Button onPress={handleSaveNote} theme={ctx.theme}>
           <ButtonText>Add Note</ButtonText>

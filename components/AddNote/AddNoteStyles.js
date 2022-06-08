@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 
-export const Container = styled.View``;
+export const Container = styled.View`
+  flex: 1;
+  background-color: ${({ theme }) => theme === "dark" && "black"};
+`;
 export const Input = styled.TextInput`
   width: 100%;
-  background-color: white;
+  background-color: ${({ theme }) => (theme === "dark" ? "#242424" : "white")};
   padding: 15px;
   font-size: ${({ fontSize }) => `${fontSize}px`};
   height: 200px;
