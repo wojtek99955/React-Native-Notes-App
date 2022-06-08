@@ -1,12 +1,9 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Platform } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 import ContextProvider from "./ContextProvider";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import AddNote from "./components/AddNote/AddNote";
-import NotesList from "./components/NotesList/NotesList";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import Settings from "./components/Settings/Settings";
 import NoteListScreen from "./screens/NoteListScreen";
 import "react-native-gesture-handler";
 import SettingsScreens from "./screens/SettingsScreens";
@@ -77,11 +74,11 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: "#fff",
+//     alignItems: "center",
+//     justifyContent: "center",
+//   },
+// });
