@@ -16,7 +16,7 @@ const Divider = styled.View`
 `;
 const Container = styled.View`
   padding: 0 10px;
-  background-color: ${({ theme }) => (theme === "dark" ? "black" : "white")};
+  background-color: ${({ theme }) => theme === "dark" && "black"};
   flex: 1;
 `;
 const Settings = ({ navigation }) => {
