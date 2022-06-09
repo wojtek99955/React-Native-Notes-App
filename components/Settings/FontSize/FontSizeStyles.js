@@ -28,5 +28,5 @@ export const DemoText = styled.Text`
 
 export const Wrapper = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => (theme === "dark" ? "black" : "white")};
+  background-color: ${({ theme }) => theme === "dark" && "black"};
 `;
