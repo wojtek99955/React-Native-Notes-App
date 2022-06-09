@@ -5,11 +5,14 @@ import {
   Divider,
   Container,
 } from "./PreferencesStyles";
+import { useContext } from "react";
+import { Context } from "../../../ContextProvider";
 
 const links = ["Dark Mode", "Font Size", "Font Color"];
 const Preferences = ({ navigation }) => {
+  const { theme } = useContext(Context);
   return (
-    <Container>
+    <Container theme={theme}>
       {links.map((link) => {
         return (
           <View key={link}>

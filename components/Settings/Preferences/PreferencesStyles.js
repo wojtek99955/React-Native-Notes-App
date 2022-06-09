@@ -6,6 +6,7 @@ export const PreferencesLink = styled.TouchableOpacity`
 `;
 export const LinkText = styled.Text`
   font-size: 25px;
+  color: ${({ theme }) => (theme === "dark" ? "black" : "white")};
 `;
 export const Divider = styled.View`
   width: 100%;
@@ -13,5 +14,6 @@ export const Divider = styled.View`
   border-bottom-width: 1px;
 `;
 export const Container = styled.View`
-  padding: 10px;
+  flex: 1;
+  background-color: ${({ theme }) => theme === "dark" && "black"};
 `;
