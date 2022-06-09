@@ -13,7 +13,8 @@ export const Wrapper = styled.ScrollView`
 export const Container = styled.TouchableWithoutFeedback``;
 export const ContentContainer = styled.View``;
 export const NoteContainer = styled.Pressable`
-  background-color: ${({ theme }) => (theme === "dark" ? "#999999" : "white")};
+  background-color: ${({ theme }) =>
+    theme === "dark" ? "#999999" : "#f2f2f2"};
   margin: 30px 10px;
   border-radius: 10px;
   padding: 10px;
