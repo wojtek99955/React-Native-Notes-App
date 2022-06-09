@@ -1,24 +1,13 @@
 import { View } from "react-native";
 import styled from "styled-components";
-import { Context } from "../../ContextProvider";
+import { Context } from "../../../ContextProvider";
 import { useContext } from "react";
-const PreferencesLink = styled.TouchableOpacity`
-  padding: 10px;
-`;
-const LinkText = styled.Text`
-  font-size: 25px;
-  color: ${({ theme }) => (theme === "dark" ? "white" : "black")};
-`;
-const Divider = styled.View`
-  width: 100%;
-  border-bottom-color: grey;
-  border-bottom-width: 1px;
-`;
-const Container = styled.View`
-  padding: 0 10px;
-  background-color: ${({ theme }) => theme === "dark" && "black"};
-  flex: 1;
-`;
+import {
+  Container,
+  PreferencesLink,
+  LinkText,
+  Divider,
+} from "./SettingsStyles";
 const Settings = ({ navigation }) => {
   const links = ["Preferences", "Privacy Policy", "About"];
   const { theme } = useContext(Context);
