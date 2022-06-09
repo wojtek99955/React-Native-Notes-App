@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View } from "react-native";
 import styled from "styled-components";
 import { Context } from "../../ContextProvider";
 import { useContext } from "react";
