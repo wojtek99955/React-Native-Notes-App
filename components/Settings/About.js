@@ -5,7 +5,7 @@ import { Context } from "../../ContextProvider";
 
 const Container = styled.View`
   padding: 10px;
-  background-color: ${({ theme }) => (theme === "dark" ? "black" : "white")};
+  background-color: ${({ theme }) => theme === "dark" && "black"};
   flex: 1;
 `;
 const StyledText = styled.Text`
