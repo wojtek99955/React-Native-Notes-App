@@ -7,11 +7,13 @@ import {
   Pressable,
 } from "react-native";
 import styled from "styled-components";
-export const Wrapper = styled.ScrollView``;
+export const Wrapper = styled.ScrollView`
+  background-color: ${({ theme }) => (theme === "dark" ? "black" : "white")};
+`;
 export const Container = styled.TouchableWithoutFeedback``;
 export const ContentContainer = styled.View``;
 export const NoteContainer = styled.Pressable`
-  background-color: white;
+  background-color: ${({ theme }) => (theme === "dark" ? "#999999" : "white")};
   margin: 30px 10px;
   border-radius: 10px;
   padding: 10px;

@@ -20,7 +20,7 @@ import {
 
 const Details = ({ route, navigation }) => {
   const item = route.params;
-  const { fontSize, fontColor } = useContext(Context);
+  const { fontSize, fontColor, theme } = useContext(Context);
   const [modalVisible, setModalVisible] = useState(false);
   const openModal = () => setModalVisible(true);
   const { notes, setNotes } = useContext(Context);
@@ -46,7 +46,7 @@ const Details = ({ route, navigation }) => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper theme={theme}>
       <Container
         onPress={() => {
           setEdit(false);
@@ -54,7 +54,7 @@ const Details = ({ route, navigation }) => {
         }}
       >
         <ContentContainer>
-          <NoteContainer onPress={() => setEdit(true)}>
+          <NoteContainer onPress={() => setEdit(true)} theme={theme}>
             {edit ? (
               <>
                 <StyledInput
