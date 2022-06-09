@@ -6,7 +6,7 @@ import { Context } from "../../ContextProvider";
 const Container = styled.ScrollView`
   padding: 15px;
   flex: 1;
-  background-color: ${({ theme }) => (theme === "dark" ? "black" : "white")};
+  background-color: ${({ theme }) => theme === "dark" && "black"};
 `;
 const StyledText = styled.Text`
   font-size: 18px;
