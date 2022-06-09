@@ -10,12 +10,18 @@ import { useContext } from "react";
 import { Context } from "../../ContextProvider";
 import SearchBar from "../SearchBar/SearchBar";
 import NoteModal from "../NoteModal";
-import { Container, DateText, NoteText, ShowMore } from "./NotesListStyle";
+import {
+  Container,
+  DateText,
+  NoteText,
+  ShowMore,
+  Wrapper,
+} from "./NotesListStyle";
 import NoteListFooter from "./NoteListFooter";
 
 const NoteList = ({ navigation }) => {
   const ctx = useContext(Context);
-  const { notes, fontColor } = ctx;
+  const { notes, fontColor, theme } = ctx;
   const filteredNotes = notes.filter((note) => {
     return note.text.toLowerCase().includes(ctx.searchNote.toLowerCase());
   });
@@ -64,7 +70,7 @@ const NoteList = ({ navigation }) => {
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <>
+      <Wrapper theme={theme}>
         <SearchBar />
 
         <FlatList
@@ -73,7 +79,7 @@ const NoteList = ({ navigation }) => {
           renderItem={Note}
           ListFooterComponent={<NoteListFooter navigation={navigation} />}
         />
-      </>
+      </Wrapper>
     </TouchableWithoutFeedback>
   );
 };

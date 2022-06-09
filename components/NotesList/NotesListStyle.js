@@ -40,3 +40,8 @@ export const ShowMore = styled.Text`
   color: #fdbe00;
   margin-bottom: 20px;
 `;
+
+export const Wrapper = styled.View`
+  flex: 1;
+  background-color: ${({ theme }) => theme === "dark" && "black"}; ;
+`;
