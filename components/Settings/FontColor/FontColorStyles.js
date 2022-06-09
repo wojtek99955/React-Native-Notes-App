@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import styled from "styled-components";
 
 export const Container = styled.View`
-  background-color: ${({ theme }) => (theme === "dark" ? "black" : "white")};
+  background-color: ${({ theme }) => theme === "dark" && "black"};
   height: 100%;
 `;
 export const MainText = styled.Text`
