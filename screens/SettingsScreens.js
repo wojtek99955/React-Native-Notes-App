@@ -7,7 +7,7 @@ import About from "../components/Settings/About";
 import FontSize from "../components/Settings/FontSize/FontSize";
 import FontColor from "../components/Settings/FontColor/FontColor";
 import { Context } from "../ContextProvider";
-import FontWeight from "../components/Settings/FontWeight";
+import FontWeight from "../components/Settings/FontWeight/FontWeight";
 
 const SettingsScreens = () => {
   const { theme } = useContext(Context);
@@ -19,6 +19,7 @@ const SettingsScreens = () => {
           backgroundColor: theme === "dark" ? "#242424" : "white",
         },
         headerTintColor: theme === "dark" ? "white" : "black",
+        detachInactiveScreens: false,
       }}
     >
       <Stack.Screen
