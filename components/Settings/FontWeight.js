@@ -25,16 +25,18 @@ const ButtonContainer = styled.View`
 const SectionContainer = styled.View`
   flex: 1;
   padding: 15px;
+  background-color: ${({ theme }) => theme === "dark" && "black"};
 `;
 
 const MainText = styled.Text`
   font-size: 30px;
   text-align: center;
   font-weight: ${({ fontWeight }) => fontWeight};
+  color: ${({ theme }) => (theme === "dark" ? "white" : "black")};
 `;
 
 const FontWeight = () => {
-  const { fontWeight, setFontWeight } = useContext(Context);
+  const { fontWeight, setFontWeight, theme } = useContext(Context);
   const MoreWeight = () => {
     setFontWeight((weight) => weight + 100);
   };
@@ -42,8 +44,10 @@ const FontWeight = () => {
     setFontWeight((weight) => weight - 100);
   };
   return (
-    <SectionContainer>
-      <MainText fontWeight={fontWeight}>Current font weight</MainText>
+    <SectionContainer theme={theme}>
+      <MainText fontWeight={fontWeight} theme={theme}>
+        Current font weight
+      </MainText>
       <ButtonContainer>
         <Button onPress={MoreWeight} disabled={fontWeight > 800}>
           <ButtonText>
