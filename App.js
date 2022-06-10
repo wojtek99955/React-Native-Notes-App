@@ -11,7 +11,7 @@ import { useContext, createContext } from "react";
 import { Context } from "./ContextProvider";
 import { Appearance } from "react-native";
 const theme = Appearance.getColorScheme();
-
+import { DefaultTheme, DarkTheme } from "@react-navigation/native";
 export const ThemeContext = createContext();
 
 export default function App() {
@@ -20,7 +20,9 @@ export default function App() {
   return (
     <ContextProvider>
       <ThemeContext.Provider value={theme}>
-        <NavigationContainer>
+        <NavigationContainer
+          theme={theme === "dark" ? DarkTheme : DefaultTheme}
+        >
           <Tabs.Navigator
             screenOptions={{
               tabBarActiveTintColor: "#fdbe00",
