@@ -30,20 +30,27 @@ const SectionContainer = styled.View`
 const MainText = styled.Text`
   font-size: 30px;
   text-align: center;
+  font-weight: 700;
 `;
 
 const FontWeight = () => {
-  const { FontWeight, setFontWeight } = useContext(Context);
+  const { fontWeight, setFontWeight } = useContext(Context);
+  const MoreWeight = () => {
+    setFontWeight((weight) => weight + 100);
+  };
+  const LessWeight = () => {
+    setFontWeight((weight) => weight - 100);
+  };
   return (
     <SectionContainer>
       <MainText>Current font weight</MainText>
       <ButtonContainer>
-        <Button>
+        <Button onPress={MoreWeight} disabled={fontWeight > 800}>
           <ButtonText>
             <Ionicons name="add-circle-outline" size={25} color="white" />
           </ButtonText>
         </Button>
-        <Button>
+        <Button onPress={LessWeight} disabled={fontWeight < 200}>
           <ButtonText>
             <Ionicons name="remove-circle-outline" size={25} color="white" />
           </ButtonText>
