@@ -20,7 +20,7 @@ import {
 
 const Details = ({ route, navigation }) => {
   const item = route.params;
-  const { fontSize, fontColor, theme } = useContext(Context);
+  const { fontSize, fontColor, theme, fontWeight } = useContext(Context);
   const [modalVisible, setModalVisible] = useState(false);
   const openModal = () => setModalVisible(true);
   const { notes, setNotes } = useContext(Context);
@@ -69,7 +69,11 @@ const Details = ({ route, navigation }) => {
               </>
             ) : (
               <>
-                <NoteText fontSize={fontSize.size} fontColor={fontColor.hex}>
+                <NoteText
+                  fontSize={fontSize.size}
+                  fontColor={fontColor.hex}
+                  fontWeight={fontWeight}
+                >
                   {item.text}
                 </NoteText>
                 <Date>{item.date}</Date>

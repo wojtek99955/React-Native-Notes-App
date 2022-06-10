@@ -22,6 +22,7 @@ export const NoteContainer = styled.Pressable`
 export const NoteText = styled.Text`
   font-size: ${({ fontSize }) => `${fontSize}px`};
   color: ${({ fontColor }) => fontColor};
+  font-weight: ${({ fontWeight }) => fontWeight};
 `;
 export const Date = styled.Text`
   margin-top: 40px;
