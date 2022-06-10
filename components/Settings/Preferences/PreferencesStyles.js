@@ -16,4 +16,5 @@ export const Divider = styled.View`
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme === "dark" && "black"};
+  padding: 10px;
 `;
