@@ -29,6 +29,7 @@ export const NoteText = styled.Text`
   font-size: ${({ fontSize }) => `${fontSize}px`};
   margin-bottom: 22px;
   color: ${({ fontColor }) => fontColor};
+  font-weight: ${({ fontWeight }) => fontWeight};
 `;
 
 export const IconContainer = styled.TouchableOpacity`
