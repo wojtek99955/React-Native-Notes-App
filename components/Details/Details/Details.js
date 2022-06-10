@@ -64,6 +64,7 @@ const Details = ({ route, navigation }) => {
                   multiline
                   autoFocus={true}
                   fontColor={fontColor.hex}
+                  fontWeight={fontWeight}
                 />
                 <Date>{item.date}</Date>
               </>

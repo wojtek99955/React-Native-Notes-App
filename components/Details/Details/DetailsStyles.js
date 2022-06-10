@@ -43,6 +43,7 @@ export const StyledInput = styled.TextInput`
   font-size: ${({ fontSize }) => `${fontSize}px`};
   padding: 0;
   color: ${({ fontColor }) => fontColor};
+  font-weight: ${({ fontWeight }) => fontWeight};
 `;
 
 export const SaveBtn = styled.TouchableOpacity`
