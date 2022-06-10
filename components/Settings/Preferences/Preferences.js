@@ -8,7 +8,7 @@ import {
 import { useContext } from "react";
 import { Context } from "../../../ContextProvider";
 
-const links = ["Dark Mode", "Font Size", "Font Color"];
+const links = ["Font Size", "Font Color", "Font Weight"];
 const Preferences = ({ navigation }) => {
   const { theme } = useContext(Context);
   return (

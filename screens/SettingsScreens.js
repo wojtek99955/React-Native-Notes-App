@@ -7,6 +7,7 @@ import About from "../components/Settings/About";
 import FontSize from "../components/Settings/FontSize/FontSize";
 import FontColor from "../components/Settings/FontColor/FontColor";
 import { Context } from "../ContextProvider";
+import FontWeight from "../components/Settings/FontWeight";
 
 const SettingsScreens = () => {
   const { theme } = useContext(Context);
@@ -30,6 +31,7 @@ const SettingsScreens = () => {
       <Stack.Screen name="About" component={About} />
       <Stack.Screen name="Font Size" component={FontSize} />
       <Stack.Screen name="Font Color" component={FontColor} />
+      <Stack.Screen name="Font Weight" component={FontWeight} />
     </Stack.Navigator>
   );
 };
