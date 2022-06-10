@@ -30,7 +30,7 @@ const SectionContainer = styled.View`
 const MainText = styled.Text`
   font-size: 30px;
   text-align: center;
-  font-weight: 700;
+  font-weight: ${({ fontWeight }) => fontWeight};
 `;
 
 const FontWeight = () => {
@@ -43,7 +43,7 @@ const FontWeight = () => {
   };
   return (
     <SectionContainer>
-      <MainText>Current font weight</MainText>
+      <MainText fontWeight={fontWeight}>Current font weight</MainText>
       <ButtonContainer>
         <Button onPress={MoreWeight} disabled={fontWeight > 800}>
           <ButtonText>
