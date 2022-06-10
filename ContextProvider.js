@@ -8,7 +8,7 @@ function ContextProvider({ children }) {
   const [searchNote, setSearchNote] = useState("");
   const [fontSize, setFontSize] = useState({ name: "medium", size: 25 });
   const [fontColor, setFontColor] = useState({ name: "black", hex: "#000000" });
-  const theme = Appearance.getColorScheme();
+  const [theme, setTheme] = useState(Appearance.getColorScheme());
 
   return (
     <Context.Provider
@@ -22,6 +22,7 @@ function ContextProvider({ children }) {
         fontColor,
         setFontColor,
         theme,
+        setTheme,
       }}
     >
       {children}
