@@ -18,22 +18,38 @@ const ButtonText = styled.Text`
   text-align: center;
 `;
 
+const ButtonContainer = styled.View`
+  margin-top: 40px;
+`;
+
+const SectionContainer = styled.View`
+  flex: 1;
+  padding: 15px;
+`;
+
+const MainText = styled.Text`
+  font-size: 30px;
+  text-align: center;
+`;
+
 const FontWeight = () => {
   const { FontWeight, setFontWeight } = useContext(Context);
   return (
-    <View>
-      <Text>Current font weight</Text>
-      <Button>
-        <ButtonText>
-          <Ionicons name="add-circle-outline" size={25} color="white" />
-        </ButtonText>
-      </Button>
-      <Button>
-        <ButtonText>
-          <Ionicons name="remove-circle-outline" size={25} color="white" />
-        </ButtonText>
-      </Button>
-    </View>
+    <SectionContainer>
+      <MainText>Current font weight</MainText>
+      <ButtonContainer>
+        <Button>
+          <ButtonText>
+            <Ionicons name="add-circle-outline" size={25} color="white" />
+          </ButtonText>
+        </Button>
+        <Button>
+          <ButtonText>
+            <Ionicons name="remove-circle-outline" size={25} color="white" />
+          </ButtonText>
+        </Button>
+      </ButtonContainer>
+    </SectionContainer>
   );
 };
 
