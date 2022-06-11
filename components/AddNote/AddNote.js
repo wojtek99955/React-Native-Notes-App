@@ -44,7 +44,7 @@ function AddNote() {
           theme={ctx.theme}
           placeholderTextColor="grey"
         />
-        <Button onPress={handleSaveNote} theme={ctx.theme}>
+        <Button onPress={handleSaveNote} noteText={noteText}>
           <ButtonText>Add Note</ButtonText>
         </Button>
       </Container>
