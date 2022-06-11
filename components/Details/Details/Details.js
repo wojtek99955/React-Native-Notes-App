@@ -21,8 +21,8 @@ import {
 const Details = ({ route, navigation }) => {
   const item = route.params;
   const { fontSize, fontColor, theme, fontWeight } = useContext(Context);
-  const [modalVisible, setModalVisible] = useState(false);
-  const openModal = () => setModalVisible(true);
+  const [deleteModalVisible, setDeleteModalVisible] = useState(false);
+  const openDeleteModal = () => setDeteleModalVisible(true);
   const { notes, setNotes } = useContext(Context);
   const [editedValue, setEditedValue] = useState("");
   const [edit, setEdit] = useState(false);
@@ -95,7 +95,7 @@ const Details = ({ route, navigation }) => {
                 <SaveBtnText>Save</SaveBtnText>
               </SaveBtn>
             )}
-            <BtnContainer onPress={openModal}>
+            <BtnContainer onPress={openDeleteModal}>
               <Ionicons name="close-circle" size={50} color="red" />
             </BtnContainer>
             <BtnContainer onPress={openEdit}>
@@ -104,8 +104,8 @@ const Details = ({ route, navigation }) => {
           </BtnsWrapper>
           <DeleteModal
             item={item}
-            modalVisible={modalVisible}
-            setModalVisible={setModalVisible}
+            modalVisible={deleteModalVisible}
+            setModalVisible={setDeleteModalVisible}
             navigation={navigation}
           />
         </ContentContainer>
