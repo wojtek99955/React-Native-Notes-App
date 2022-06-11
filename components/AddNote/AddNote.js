@@ -42,7 +42,7 @@ function AddNote() {
           ref={inputRef}
           fontSize={ctx.fontSize.size}
           theme={ctx.theme}
-          placeholderTextColor={ctx.theme === "dark" ? "white" : "black"}
+          placeholderTextColor="grey"
         />
         <Button onPress={handleSaveNote} theme={ctx.theme}>
           <ButtonText>Add Note</ButtonText>
