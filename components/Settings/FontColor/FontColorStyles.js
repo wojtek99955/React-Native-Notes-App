@@ -8,8 +8,10 @@ export const Container = styled.View`
 export const MainText = styled.Text`
   font-size: 25px;
   margin: auto;
-  padding-top: 20px;
+  padding: 20px;
   color: ${({ color }) => color};
+  background-color: ${({ theme }) => (theme === "dark" ? "grey" : "white")};
+  border-radius: 10px;
 `;
 
 export const ColorContainer = styled.View`
