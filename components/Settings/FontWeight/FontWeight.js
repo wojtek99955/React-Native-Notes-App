@@ -23,12 +23,28 @@ const FontWeight = () => {
         Current font weight
       </MainText>
       <ButtonContainer>
-        <Button onPress={MoreWeight} disabled={fontWeight > 800}>
+        <Button
+          onPress={MoreWeight}
+          disabled={fontWeight > 800}
+          style={
+            fontWeight > 800
+              ? { backgroundColor: "#ffe69b" }
+              : { backgroundColor: "#fdbe00" }
+          }
+        >
           <ButtonText>
             <Ionicons name="add-circle-outline" size={25} color="white" />
           </ButtonText>
         </Button>
-        <Button onPress={LessWeight} disabled={fontWeight < 200}>
+        <Button
+          onPress={LessWeight}
+          disabled={fontWeight < 200}
+          style={
+            fontWeight < 200
+              ? { backgroundColor: "#ffe69b" }
+              : { backgroundColor: "#fdbe00" }
+          }
+        >
           <ButtonText>
             <Ionicons name="remove-circle-outline" size={25} color="white" />
           </ButtonText>
