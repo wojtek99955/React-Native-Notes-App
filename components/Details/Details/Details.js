@@ -3,6 +3,7 @@ import { useContext } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState } from "react";
 import DeleteModal from "../DeleteModal/DeleteModal";
+import EmptyValueModal from "../EmptyValueModal/EmptyValueModal";
 import { Keyboard } from "react-native";
 import {
   Wrapper,
@@ -23,13 +24,21 @@ const Details = ({ route, navigation }) => {
   const { fontSize, fontColor, theme, fontWeight } = useContext(Context);
   const [deleteModalVisible, setDeleteModalVisible] = useState(false);
   const openDeleteModal = () => setDeteleModalVisible(true);
+  const [emptyValueModalVisible, setEmptyValueModalVisible] = useState(false);
+  const openEmptyValueModal = () => {
+    if (editedValue.length === 0) {
+      setEmptyValueModalVisible(true);
+    }
+  };
+
   const { notes, setNotes } = useContext(Context);
   const [editedValue, setEditedValue] = useState("");
   const [edit, setEdit] = useState(false);
   const openEdit = () => {
     setEdit((prev) => !prev);
   };
-  console.log(editedValue);
+  console.log(emptyValueModalVisible);
+
   const handleSave = (id) => {
     const elementId = notes.findIndex((el) => el.id === id);
     const newArray = [...notes];
@@ -44,6 +53,8 @@ const Details = ({ route, navigation }) => {
     if (editedValue.length > 0) {
       setEdit(false);
       setNotes(newArray);
+    } else {
+      openEmptyValueModal();
     }
 
     Keyboard.dismiss();
@@ -107,6 +118,10 @@ const Details = ({ route, navigation }) => {
             modalVisible={deleteModalVisible}
             setModalVisible={setDeleteModalVisible}
             navigation={navigation}
+          />
+          <EmptyValueModal
+            modalVisible={emptyValueModalVisible}
+            setModalVisible={setEmptyValueModalVisible}
           />
         </ContentContainer>
       </Container>
