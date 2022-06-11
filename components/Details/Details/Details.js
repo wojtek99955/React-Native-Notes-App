@@ -40,8 +40,12 @@ const Details = ({ route, navigation }) => {
     navigation.setParams({
       text: editedValue,
     });
-    setEdit(false);
-    setNotes(newArray);
+
+    if (editedValue.length > 0) {
+      setEdit(false);
+      setNotes(newArray);
+    }
+
     Keyboard.dismiss();
   };
 
