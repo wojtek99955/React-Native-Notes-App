@@ -14,6 +14,7 @@ notes app
 - add note
 - change font size
 - change font color
+- change font weight
 - delete note
 - edit note
 
