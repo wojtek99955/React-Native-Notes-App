@@ -20,7 +20,7 @@ const Preferences = ({ navigation }) => {
               key={link}
               onPress={() => navigation.navigate(link)}
             >
-              <LinkText>{link}</LinkText>
+              <LinkText theme={theme}>{link}</LinkText>
             </PreferencesLink>
             <Divider></Divider>
           </View>
