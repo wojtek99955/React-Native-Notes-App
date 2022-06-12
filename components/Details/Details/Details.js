@@ -23,7 +23,7 @@ const Details = ({ route, navigation }) => {
   const item = route.params;
   const { fontSize, fontColor, theme, fontWeight } = useContext(Context);
   const [deleteModalVisible, setDeleteModalVisible] = useState(false);
-  const openDeleteModal = () => setDeteleModalVisible(true);
+  const openDeleteModal = () => setDeleteModalVisible(true);
   const [emptyValueModalVisible, setEmptyValueModalVisible] = useState(false);
   const openEmptyValueModal = () => {
     if (editedValue.length === 0) {
