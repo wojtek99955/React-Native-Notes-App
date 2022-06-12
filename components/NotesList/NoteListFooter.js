@@ -9,7 +9,7 @@ const NoteListFooter = ({ navigation }) => {
   const { notes } = ctx;
   if (notes.length > 2) {
     return (
-      <IconContainer onPress={() => navigation.navigate("Add Note")}>
+      <IconContainer onPress={() => navigation.navigate("Create Note")}>
         <Ionicons name="add-circle" color="#fdbe00" size={60} />
       </IconContainer>
     );
